@@ -9,7 +9,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
-import Link from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Navbar(props) {
     let user = props.user;
