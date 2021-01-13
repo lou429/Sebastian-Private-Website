@@ -1,28 +1,30 @@
 import './App.scss';
 import Navbar from './components/navbar.js';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "../node_modules/react-router-dom";
-import {useAuthState} from 'react-firebase-hooks/auth';
-import {useCollectionData} from 'react-firebase-hooks/firestore';
+import { BrowserRouter as Router, Routes, Route, Link } from '../node_modules/react-router-dom';
+
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
+// import 'firebase/auth';
+// import {useAuthState} from 'react-firebase-hooks/auth';
+// import {useCollectionData} from 'react-firebase-hooks/firestore';
+
 import Snake from "./components/snake.js";
 import Dev from "./components/dev.js";
 import Home from "./components/home.js";
+import SignInPage from './components/SignInPage.js';
+import User from "./components/UserPage.js";
 
 
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+// const auth = firebase.auth();
+// const firestore = firebase.firestore();
 
 
 function App() {
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
+  let user = 
+    ['Name', 
+    '123151'];
 
   return (
     <Router> 
@@ -41,18 +43,16 @@ function App() {
       </div>
       </div>
     </div>
-    //Switch for the paths
-    <Switch>
-      <Route path="/home">
-        <Home/>
-      </Route>
-      <Route path="/dev">
-        <Dev/>
-      </Route>
-      <Route path="/snake">
-        <Snake/>
-      </Route>
-    </Switch>
+    
+    <Router>
+      <Routes> 
+        <Route path="/" element={<Home/>} exact/>
+        <Route path="/dev" element={<Dev/>}/>
+        <Route path="/SignIn" element={<SignInPage/>}/>
+        <Route path="/User" element={<User/>}/>
+      </Routes>
+    </Router>
+
     </Router>
   );
 }

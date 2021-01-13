@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 let snake = [
     {x: 150, y: 150}, 
     {x: 140, y: 150},
@@ -14,7 +15,7 @@ function SnakeGame(props) {
 
     function drawSnakePart(snakePart) 
     {
-        let game = $(".game-canvas");
+        let game = document.getElementsByClassName('game-canvas');
         game.fillStyle = 'lightGreen';
         game.strokeStyle = 'darkgreen';
         game.fillRect(snakePart.x, snakePart.y, 10, 10);
@@ -29,7 +30,7 @@ function SnakeGame(props) {
 
     function moveSnake() 
     {   
-        const head = {X: snake[0].x + dx, y: snake[0].y};
+        const head = {X: snake[0].x + 10, y: snake[0].y};
         snake.unshift(head);
         snake.pop();
     }
@@ -41,4 +42,4 @@ function SnakeGame(props) {
     );
 }
 
-export default Snake; 
+export default SnakeGame; 
