@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import dotenv from 'dotenv';
 
-require('dotenv').config();
-console.log(process.env); 
+const dotenv = require('dotenv');
+dotenv.config({ debug: process.env.DEBUG });
+console.log(process.env);
+console.log(process.env.FB_API_KEY);
+console.log(process.env.FB_KEY);
 
-ReactDOM.render(
+
+ReactDOM.render( 
   <React.StrictMode>
     <App />
   </React.StrictMode>,
