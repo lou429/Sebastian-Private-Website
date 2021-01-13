@@ -9,7 +9,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 function Navbar(props) {
     let user = props.user;
@@ -31,7 +31,7 @@ function Navbar(props) {
                     {user ? <User user={user} /> : <SignIn/>}
                 </NavLink> */}
                 <NavLink>
-                    <Link to="/">Home</Link> 
+                    {/* <Link to="/">Home</Link>  */}
                 </NavLink>
                 <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle caret>
@@ -39,17 +39,18 @@ function Navbar(props) {
                     </DropdownToggle>   
                     <DropdownMenu>
                         <DropdownItem header>Socials</DropdownItem>
-                        <DropdownItem><Link to="/dev">Github</Link></DropdownItem>   
+                        {/* <Link to="/dev">Github</Link> */}
+                        <DropdownItem></DropdownItem>   
                         <DropdownItem>Instagram</DropdownItem>
                         <DropdownItem divider/>
                         <DropdownItem header>Recent projects</DropdownItem>
-                        {recentProjects.array.forEach(project => {
+                        {/* {recentProjects.array.forEach(project => {
                             <DropdownItem>{project.Name}</DropdownItem>
-                        })}
+                        })} */}
                     </DropdownMenu>                 
                 </ButtonDropdown>
                 <NavLink>
-                    <Link to="/user">My page</Link> 
+                    {/* <Link to="/user">My page</Link>  */}
                 </NavLink>
             </NavItem>
         </Nav>

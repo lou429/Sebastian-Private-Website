@@ -27,7 +27,7 @@ function App() {
     '123151'];
 
   return (
-    <Router> 
+    <div>
       <div className="App">
         <div className="container-fluid">
         <Navbar user={user}/>
@@ -43,7 +43,6 @@ function App() {
       </div>
       </div>
     </div>
-    
     <Router>
       <Routes> 
         <Route path="/" element={<Home/>} exact/>
@@ -52,8 +51,7 @@ function App() {
         <Route path="/User" element={<User/>}/>
       </Routes>
     </Router>
-
-    </Router>
+    </div>
   );
 }
 
