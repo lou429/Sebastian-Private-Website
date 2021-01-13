@@ -15,11 +15,13 @@ function NavBar(props) {
         <div className="navbar">
             <div className="content-container">
                 <NavLink href="/">Home</NavLink>
-                <NavLink href="/dev">Development page</NavLink>
+                <NavLink href="/dev">Development</NavLink>
                 <NavLink href="/user">About me</NavLink>
             </div>
             <div className="content-end">
-                {/* <h1>Heading</h1> */}
+                <a href="https://github.com/lou429" target="_blank" rel="noopener noreferrer">
+                    <img id="github-profile" src="https://github.com/lou429.png" alt="Github profile" height="40" width="40"/>
+                </a>
             </div>
         </div>
     );

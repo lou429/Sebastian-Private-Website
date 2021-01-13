@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+$primary-text-color: black; 
+
 .link-body {
-    padding-left: 10px; 
+    padding-left: 20px; 
     padding-right: 10px;
     align-content: center;
-    padding-top: 5px;
+    padding-top: 15px;
     padding-bottom: 5px;
     margin: 0 auto;
     display: inline-block;
 }
 
 .link-body a {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255);
     text-decoration: none;
-    text-shadow: 1px 1px black;
     text-align: center;
+    color: $primary-text-color;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
 }
