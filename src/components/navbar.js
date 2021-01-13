@@ -13,7 +13,7 @@ function NavBar(props) {
 
     return (
         <div className="navbar">
-            <div className="content-container">
+            <div className="nav-content-container">
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/dev">Development</NavLink>
                 <NavLink href="/user">About me</NavLink>

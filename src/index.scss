@@ -1,6 +1,8 @@
-$nav-color: #f7f7f7;
+$background-color: rgb(138, 138, 138);
 
 body {
+  background-color: $background-color;
+  height: 100%;
   margin: 0;
 }
 
@@ -10,8 +12,8 @@ code {
 }
 
 #root {
-  background-color: rgb(138, 138, 138);
-  color: rgb(255, 255, 255); 
+  height: auto !important;
+  color: white; 
 }
 
 .App {
