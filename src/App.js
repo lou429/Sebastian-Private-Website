@@ -1,11 +1,9 @@
 import './App.scss';
 import NavBar from './components/navbar.js';
-import { BrowserRouter as Router, Routes, Route, Link } from '../node_modules/react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link} from '../node_modules/react-router-dom';
 
-// import firebase from 'firebase/app';
-// import 'firebase/firestore';
-// import 'firebase/auth';
-// import {useAuthState} from 'react-firebase-hooks/auth';
+// import firebase from 'firebase/app'; import 'firebase/firestore'; import
+// 'firebase/auth'; import {useAuthState} from 'react-firebase-hooks/auth';
 // import {useCollectionData} from 'react-firebase-hooks/firestore';
 
 import Snake from "./components/snake.js";
@@ -14,36 +12,32 @@ import Home from "./components/home.js";
 import SignInPage from './components/SignInPage.js';
 import User from "./components/UserPage.js";
 
-
-
-// const auth = firebase.auth();
-// const firestore = firebase.firestore();
-
+// const auth = firebase.auth(); const firestore = firebase.firestore();
 
 function App() {
-  // const [user] = useAuthState(auth);
-  let user = 
-    ['Name', 
-    '123151'];
+    // const [user] = useAuthState(auth);
+    let user = ['Name', '123151'];
 
-  return (
-    <>
-      <div className="App">
+    return ( 
+    <> 
+    <div className="App">
         <NavBar/>
-      <br/>
-      <br/>
-      <div className="content-container">
-    <Router>
-      <Routes> 
-        <Route path="/" element={<Home/>} exact/>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/dev" element={<Dev/>}/>
-        <Route path="/SignIn" element={<SignInPage/>}/>
-        <Route path="/User" element={<User/>}/>
-      </Routes>
-    </Router>
-    </div>
-    </div>
+        <br/>
+        <br/>
+        <div className="content-container">
+            <div className="content-row">
+                <Router>
+                    <Routes>
+                        <Route path="/" element={< Home />} exact/>
+                        <Route path="/home" element={< Home />}/>
+                        <Route path="/dev" element={< Dev />}/>
+                        <Route path="/SignIn" element={< SignInPage />}/>
+                        <Route path="/User" element={< User />}/>
+                    </Routes>
+                </Router>
+            </div>
+        </div>
+    </div> 
     </>
   );
 }

@@ -2,11 +2,6 @@ $nav-color: #f7f7f7;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -15,7 +10,6 @@ code {
 }
 
 #root {
-  padding: 20px;
   background-color: rgb(138, 138, 138);
   color: rgb(255, 255, 255); 
 }
@@ -24,32 +18,4 @@ code {
   justify-content: center;
   align-items: center;
   max-width: 100%;
-}
-
-.heading {
-  display: flex;
-}
-
-.container-fluid {
-  width: 70%; 
-  margin-left: 30%;
-  padding: 0px 20px 0px 20px;
-  background-color: $nav-color;
-  min-height: 100%;
-  display: grid;
-  justify-content: start;
-  align-content: center;
-}
-
-.container {
-  display: grid;
-  justify-content: start;
-  align-content: center;
-
-}
-
-.row {
-  height: 100%;
-  background-color: black;
-  max-width: 70%;
 }

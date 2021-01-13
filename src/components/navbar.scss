@@ -1,22 +1,25 @@
-$nav-color-main: blue;
-$nav-color-secondary: black; 
+$nav-color-main: rgb(47, 47, 47); 
+$nav-color-secondary: rgb(56, 56, 56); 
 
 .navbar {
     width: 100%;
     display: flex;
-    color: rgb(73, 73, 73); 
     background-color: $nav-color-main;
     align-content: center;
-    border: 3px solid $nav-color-secondary;
     text-align: center;
-    
+    border: 3px solid $nav-color-secondary;
+    text-align: center;    
+    justify-content: center;
 }
 
 .content-container {
     display: inline-block;
-    
+    justify-content: center;
 }
 
 .content-end {
+    margin-left: 1rem;
     margin-right: 20px;
+    right: 0px;
+    justify-content: end;
 }
