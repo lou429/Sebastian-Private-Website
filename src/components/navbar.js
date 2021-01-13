@@ -1,60 +1,23 @@
 import React, { useState } from 'react';
-import {
-    Nav,
-    NavItem,
-    NavLink,
-    Button,
-    ButtonDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-} from 'reactstrap';
-// import {Link} from 'react-router-dom';
+import NavLink from './navlink.js';
+import './navbar.scss';
 
-function Navbar(props) {
-    let user = props.user;
+function NavBar(props) {
+    // let user = props.user;
 
-    const [dropdownOpen, setOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => setOpen(!dropdownOpen);
+    // const toggle = () => setIsOpen(!isOpen);
 
-    const recentProjects = props.recentProjects;
+    // const recentProjects = props.recentProjects;
 
     return (
-        <Nav>
-            <NavItem>
-                <NavLink>
-                    <i className="fa fa-home" aria-hidden="true"></i>
-                </NavLink>
-                <Button color="orange">button</Button>
-                {/* <NavLink>
-                    {user ? <User user={user} /> : <SignIn/>}
-                </NavLink> */}
-                <NavLink>
-                    {/* <Link to="/">Home</Link>  */}
-                </NavLink>
-                <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-                    <DropdownToggle caret>
-                        Development    
-                    </DropdownToggle>   
-                    <DropdownMenu>
-                        <DropdownItem header>Socials</DropdownItem>
-                        {/* <Link to="/dev">Github</Link> */}
-                        <DropdownItem></DropdownItem>   
-                        <DropdownItem>Instagram</DropdownItem>
-                        <DropdownItem divider/>
-                        <DropdownItem header>Recent projects</DropdownItem>
-                        {/* {recentProjects.array.forEach(project => {
-                            <DropdownItem>{project.Name}</DropdownItem>
-                        })} */}
-                    </DropdownMenu>                 
-                </ButtonDropdown>
-                <NavLink>
-                    {/* <Link to="/user">My page</Link>  */}
-                </NavLink>
-            </NavItem>
-        </Nav>
+        <div className="navbar-container">
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/dev">Development page</NavLink>
+            <NavLink href="/user">About me</NavLink>
+        </div>
     );
 }
 
-export default Navbar;
+export default NavBar;

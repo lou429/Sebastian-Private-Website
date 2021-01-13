@@ -1,5 +1,5 @@
 import './App.scss';
-import Navbar from './components/navbar.js';
+import NavBar from './components/navbar.js';
 import { BrowserRouter as Router, Routes, Route, Link } from '../node_modules/react-router-dom';
 
 // import firebase from 'firebase/app';
@@ -30,22 +30,14 @@ function App() {
     <div>
       <div className="App">
         <div className="container-fluid">
-        <Navbar user={user}/>
+        <NavBar/>
       </div>
-      <div className="container">
-        <div className="row">
-      <h1 className="heading"> 
-        This website is currently under construction!
-      </h1>
-      <div className="image heading">
-        <img src="./icons/widget.png" alt="Error"></img>
-      </div>
-      </div>
-      </div>
+      <br/>
     </div>
     <Router>
       <Routes> 
         <Route path="/" element={<Home/>} exact/>
+        <Route path="/home" element={<Home/>}/>
         <Route path="/dev" element={<Dev/>}/>
         <Route path="/SignIn" element={<SignInPage/>}/>
         <Route path="/User" element={<User/>}/>

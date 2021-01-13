@@ -3,11 +3,16 @@ import './home.scss';
 
 function Home(props) {
     return(
-         <div className="container-main">
-            <h1>
-                Welcome to this new page 
-            </h1>
-         </div>
+        <div className="container">
+        <div className="row">
+      <h1 className="heading"> 
+        This website is currently under construction!
+      </h1>
+      <div className="image heading">
+        <img src="./icons/widget.png" alt="Error"></img>
+      </div>
+      </div>
+      </div>
     );  
 }
 
