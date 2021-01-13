@@ -1,7 +1,16 @@
-.navlink-container {
+.link-body {
     padding-left: 10px; 
     padding-right: 10px;
     align-content: center;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.link-body a {
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    text-shadow: 1px 1px black;
+    text-align: center;
 }

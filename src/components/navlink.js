@@ -4,7 +4,7 @@ import './navlink.scss';
 function NavLink(props) {
     return(
         <>
-            <div className="navlink-container">
+            <div className="link-body">
                 <a href={props.href}>
                     {props.children}
                 </a>

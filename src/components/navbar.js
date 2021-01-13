@@ -12,10 +12,15 @@ function NavBar(props) {
     // const recentProjects = props.recentProjects;
 
     return (
-        <div className="navbar-container">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/dev">Development page</NavLink>
-            <NavLink href="/user">About me</NavLink>
+        <div className="navbar">
+            <div className="content-container">
+                <NavLink href="/">Home</NavLink>
+                <NavLink href="/dev">Development page</NavLink>
+                <NavLink href="/user">About me</NavLink>
+            </div>
+            <div className="content-end">
+                {/* <h1>Heading</h1> */}
+            </div>
         </div>
     );
 }
