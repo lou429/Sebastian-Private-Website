@@ -48,7 +48,7 @@ typings/
 *.tsbuildinfo
 
 #Enviroment variables
-
+.en
 
 #Trello link
 Trello.url
