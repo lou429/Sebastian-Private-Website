@@ -2,15 +2,17 @@ import React from 'react';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+// const auth = firebase.auth();
+// const firestore = firebase.firestore();
 
 function SignInPage() {
-    const signInWithGoogle = () => { 
-        const provider = new firebase.auth.GoogleAuthProvider();
-    }; auth.signInWithPopup(provider);
+    // const signInWithGoogle = () => { 
+    //     const provider = new firebase.auth.GoogleAuthProvider();
+    // }; auth.signInWithPopup(provider);
     return (
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <div>
+            {/* <button onClick={signInWithGoogle}>Sign in with Google</button> */}
+        </div>
     );
 }
 
