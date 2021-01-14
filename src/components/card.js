@@ -20,13 +20,13 @@ function Card(props) {
                     <div className="dev-card-author-name-prefix">Author</div>
                     Pariatur dolore
                 </div>
-                <div className="dev-card-tags">
+            </div>
+            <div className="dev-card-tags">
                     <a>temp</a>
                     <a>temp</a>
                     <a>temp</a>
                     {/* TODO: Return coding tag from github */}
                 </div>
-            </div>
         </div>
     );
 }
