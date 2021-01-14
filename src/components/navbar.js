@@ -17,6 +17,7 @@ function NavBar(props) {
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/dev">Development</NavLink>
                 <NavLink href="/user">About me</NavLink>
+                <NavLink href="/contact">Contact me</NavLink>
             </div>
             <div className="content-end">
                 <a href="https://github.com/lou429" target="_blank" rel="noopener noreferrer">
