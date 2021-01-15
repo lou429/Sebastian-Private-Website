@@ -32,7 +32,7 @@ function Card(props) {
 
             <div className="dev-card-body">
                 <a className="dev-card-avatar-link" href={props.url}>
-                    <img src={props.creatorUrl + ".png" || "../../public/icons/default_github.png"} alt="Author avatar"/>
+                    <img src={props.creatorUrl + ".png"} alt="Author avatar"/>
                 </a>
                 <svg className="dev-card-half-circle" viewBox="0 0 106 57">
                     <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
