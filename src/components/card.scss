@@ -76,6 +76,29 @@ $card-color-secondary: #17141d;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: default;
+}
+
+.dev-card-body a:hover{
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-backdrop-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    cursor: auto;
+}
+
+.dev-card-author-name a:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.dev-card-author-name a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
 }
 
 .dev-card-avatar-link {
@@ -95,6 +118,10 @@ $card-color-secondary: #17141d;
     margin: 16px 10px;
 }
 
+.dev-card-avatar-link img:hover {
+    filter: grayscale(0%);
+}
+
 .dev-card-author-name {
     grid-area: auto;
     box-sizing: border-box;
@@ -111,6 +138,9 @@ $card-color-secondary: #17141d;
     padding: .5rem 0 1rem;
     line-height: 2;
     margin-bottom: 0;
+    display: inline-block;
+    grid-area: auto;
+    text-align: center;
 }
 
 .dev-card-tags a {
@@ -124,6 +154,11 @@ $card-color-secondary: #17141d;
     border-radius: 2rem;
     padding: .2rem .85rem .25rem;
     position: relative;
+    text-decoration: none;
+}
+
+.dev-card-tags a.dev-card-tags:not(:first-child) {
+    margin-left: 20px;
 }
 
 .dev-card-tags a:hover {
@@ -132,6 +167,7 @@ $card-color-secondary: #17141d;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     background-clip: text;
     border-color: white;
 }

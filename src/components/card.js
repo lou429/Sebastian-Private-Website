@@ -5,8 +5,8 @@ function Card(props) {
     return (
         <div className="dev-card">
             <div className="dev-card-header">
-                <p>{props.date}</p>
-                <h2>{props.name}</h2>
+                <p>{props.date || "01-01-2000"}</p>
+                <h2>{props.projectName || "Could not get name"}</h2>
             </div>
 
             <div className="dev-card-body">
@@ -18,13 +18,11 @@ function Card(props) {
                 </svg>
                 <div className="dev-card-author-name">
                     <div className="dev-card-author-name-prefix">Author</div>
-                    Pariatur dolore
+                    <a id="authorName" href={props.creatorUrl || "#"}>{props.creatorName || "Could not get name"}</a>
                 </div>
             </div>
             <div className="dev-card-tags">
-                    <a>temp</a>
-                    <a>temp</a>
-                    <a>temp</a>
+                    <a href={props.creatorUrl || "#"}>temp</a>
                     {/* TODO: Return coding tag from github */}
                 </div>
         </div>
