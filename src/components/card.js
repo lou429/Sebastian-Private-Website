@@ -1,7 +1,28 @@
 import React from 'react';
 import './card.scss';
+import { Octokit } from "@octokit/rest";
 // function Card({id, name, url, date}) {
 function Card(props) {
+    async function getGithubTags(tagsUrl) {
+        let tagList = [{tagName: ""}];
+        tagList.pop();
+
+        const octokit = new Octokit();
+        await octokit.request('GET /users/{user}/repos', {
+            user: ''
+        })
+        .then(({ data }) => {
+            data.forEach((tags) => {
+                tagList.push(tags);
+            })
+        })
+        .catch(({ exception }) => {
+            console.log(exception);
+        });
+
+        return tagList;
+    }
+
     return (
         <div className="dev-card">
             <div className="dev-card-header">
@@ -11,7 +32,7 @@ function Card(props) {
 
             <div className="dev-card-body">
                 <a className="dev-card-avatar-link" href={props.url}>
-                    <img src="https://github.com/lou429.png"/>
+                    <img src={props.creatorUrl + ".png" || "../../public/icons/default_github.png"} alt="Author avatar"/>
                 </a>
                 <svg className="dev-card-half-circle" viewBox="0 0 106 57">
                     <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
@@ -22,8 +43,12 @@ function Card(props) {
                 </div>
             </div>
             <div className="dev-card-tags">
-                    <a href={props.creatorUrl || "#"}>temp</a>
                     {/* TODO: Return coding tag from github */}
+                    {
+                        // getGithubTags(props.tagsUrl).map((tag) => {
+                        //     <a href={props.projectUrl  || "#"}>{tag}</a>
+                        // })
+                    }
                 </div>
         </div>
     );

@@ -2,61 +2,65 @@ import React from 'react';
 import { Octokit } from "@octokit/rest";
 import Card from './card.js';
 
+class GithubRepos {
+    constructor(id, projectName, projectUrl, creatorName, creatorUrl, date, tagsUrl) {
+        this.id = id;
+        this.projectName = projectName;
+        this.projectUrl = projectUrl;
+        this.creatorName = creatorName; 
+        this.creatorUrl = creatorUrl;
+        this.date = date; 
+        this.tagsUrl = tagsUrl;
+    }
+}
 
 async function getGithubRepos() {
     const octokit = new Octokit();
 
-    let repoList = [];
+    let repoList = new GithubRepos();
 
     await octokit.request('GET /users/{user}/repos',  {
         user: 'lou429',
         type: 'public'
     })
+    .then((response) => response.json())
     .then(({ data }) => {
         data.forEach(repo => {
             if(!repo.private)
-                repoList.push({id: repo.id, projectName: repo.name, creatorName: repo.owner.login, creatorUrl: repo.owner.owner.url, url: repo.url, date:repo.created_at});
+                repoList.push(new GithubRepos(repo.id, repo.name, repo.url, repo.owner.login, repo.owner.owner.url, repo.created_at, repo.tags_url));
         });
     })
-    .catch(({ data }) => {
-        console.log(data);
+    .catch(({ exception }) => {
+        console.log(exception);
     });
-    
-    let counter = 0; 
-    repoList = repoList.map((repo) => {
-        document.createElement("Card", )
-        console.log(counter++ + " : " + repo.projectName + repo.date);
-    });
-
-    console.log(repoList);
 
     return repoList; 
 }
 
-async function returnGithubRepos() {
-    let RepoList = [{id: 1, projectName: "", creatorName: "", creatorUrl: "", url: "", date:""}];
-    let repoList = await getGithubRepos();
+function returnGithubRepos() {
+    // let RepoList = Array(GithubRepos);
+    let repoList = getGithubRepos();
     console.log("got result");
     
-    for(var x = 0; x != repoList.length; x++)
-    {
-        let element = repoList[x];
-        RepoList.push(element.id, element.projectName, element.creatorName, element.creatorUrl, element.url, element.date);
-    }
+    // for(var x = 0; x != repoList.length; x++)
+    // {
+    //     let element = repoList[x];
+    //     RepoList.push(element.id, element.projectName, element.creatorName, element.creatorUrl, element.url, element.date);
+    // }
 
-    document.getElementById("repoCount").innerHTML = RepoList.length;
+    // repoList.forEach((val) => {
+    //     RepoList.push(val);
+    // });
 
-    return RepoList;
+    console.log(repoList);
+
+    document.getElementById("repoCount").innerHTML = repoList.length;
+
+    return repoList;
 }
 
 function Development() {
-    // let repo = repoList[0];
-    // let singleRepo = repoList[0];
-    // console.log("Single repo: " + singleRepo);
     let repos = returnGithubRepos();
-    // repos.forEach(repo => {
-    //     console.log(repo);
-    // });
 
     return(
         <div className="container">
