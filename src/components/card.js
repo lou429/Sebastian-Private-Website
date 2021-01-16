@@ -1,7 +1,10 @@
 import React from 'react';
 import './card.scss';
 import { Octokit } from "@octokit/rest";
+import $ from 'jquery';
 // function Card({id, name, url, date}) {
+
+
 function Card(props) {
     async function getGithubTags(tagsUrl) {
         let tagList = [{tagName: ""}];
@@ -22,6 +25,13 @@ function Card(props) {
 
         return tagList;
     }
+    
+    $(document).ready(function() {
+        $('.dev-card-avatar-image').each(function(index, obj) {
+            if($(obj).attr('src') === 'undefined.png')
+                $(obj).attr('class', 'dev-card-avatar-image-no-image');
+        })
+    })
 
     return (
         <div className="dev-card">
@@ -31,22 +41,22 @@ function Card(props) {
             </div>
 
             <div className="dev-card-body">
-                <a className="dev-card-avatar-link" href={props.url}>
-                    <img src={props.creatorUrl + ".png"} alt="Author avatar"/>
+                <a className="dev-card-avatar-link" href={props.url} target="_blank" rel="noopener noreferrer">
+                    <img className="dev-card-avatar-image" src={props.creatorUrl + ".png"} alt="Author avatar"/>
                 </a>
                 <svg className="dev-card-half-circle" viewBox="0 0 106 57">
                     <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
                 </svg>
                 <div className="dev-card-author-name">
                     <div className="dev-card-author-name-prefix">Author</div>
-                    <a id="authorName" href={props.creatorUrl || "#"}>{props.creatorName || "Could not get name"}</a>
+                    <a id="authorName" href={props.creatorUrl} target="_blank" rel="noopener noreferrer">{props.creatorName || "Could not get name"}</a>
                 </div>
             </div>
             <div className="dev-card-tags">
                     {/* TODO: Return coding tag from github */}
                     {
                         // getGithubTags(props.tagsUrl).map((tag) => {
-                        //     <a href={props.projectUrl  || "#"}>{tag}</a>
+                        //     <a href={props.projectUrl  || "#"} target="_blank" rel="noopener noreferrer">{tag} </a>
                         // })
                     }
                 </div>

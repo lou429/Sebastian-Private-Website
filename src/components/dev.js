@@ -15,7 +15,8 @@ class GithubRepos {
     }
 }
 
-$(document).ready(function() {
+function getRest() {
+// $(document).ready(function() {
     console.log("Document ready trigger");
     const octokit = new Octokit();
 
@@ -35,7 +36,8 @@ $(document).ready(function() {
     //     console.log(exception);
     // })
     // https://api.github.com/users/lou429/repos
-})
+// })
+}
 
 function receivedGithubCallback(data)
 {
@@ -121,7 +123,7 @@ function Development() {
                 <br/>
                 <div className="dev-card-list-container">
                     <div className="dev-card-list">
-                        <Card date="01-01-2020" projectName="Non est veniam laboris" creatorName="Sebastian Bednarz" creatorUrl="https://www.github.com/lou429"/>
+                        <Card date="01-01-2020" projectName="Non est veniam laboris" creatorName="Sebastian Bednarz" creatorUrl="https://github.com/raegar"/>
                         <Card date="01-01-2020" projectName="Non est veniam laboris" creatorName="Sebastian Bednarz"/>
                         <Card date="01-01-2020" projectName="Non est veniam laboris" creatorName="Sebastian Bednarz"/>
                         <Card date="01-01-2020" projectName="Non est veniam laboris" creatorName="Sebastian Bednarz"/>

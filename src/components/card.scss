@@ -1,5 +1,4 @@
-$card-color-primary: #201c29;
-$card-color-secondary: #17141d;
+@import "src/index";
 
 .dev-card-list-container {
     // padding: 3rem;
@@ -71,7 +70,7 @@ $card-color-secondary: #17141d;
 }
 
 .dev-card-header h2:hover{
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
     text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
@@ -80,7 +79,7 @@ $card-color-secondary: #17141d;
 }
 
 .dev-card-body a:hover{
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
     text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
