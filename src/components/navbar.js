@@ -14,7 +14,21 @@ $(document).ready(function() {
     let url = (document.URL);
     url = "/" + url.split('/')[3];
     $('.nav-link-body').each(function() {
-        $(this.childNodes[0]).attr('class', 'nav-link-src' + (url === $(this.childNodes[0]).attr('href') ? "-active" : ''));
+        let modClass = (url === $(this.childNodes[0]).attr('href') ? "-active" : '');
+        let node = this.childNodes[0];
+        $(node).attr('class', 'nav-link-src' + modClass);
+        if(modClass === '') {
+            $(node).hover(function() {
+                $('.nav-link-src-active').css('font-size', '24px');
+            });
+            $(node).mouseleave(function() {
+                $('.nav-link-src-active').css('font-size', '28px');
+            })
+        }
+        else {
+            $(node).css("font-size", "28px");
+            $(node).prop('disabled', false);
+        }
     });
 });
 

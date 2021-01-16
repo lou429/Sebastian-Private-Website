@@ -35,7 +35,11 @@
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: default;
-    font-size: 28px;
+    font-size: 28px;    
+}
+
+.nav-link-body a:hover ~ .nav-link-src-active {
+
 }
 
 .content-end {
