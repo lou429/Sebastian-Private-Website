@@ -34,7 +34,7 @@ function Card(props) {
             counter++;
         });
         // TODO: Remove this once a better way to load repo data 
-        $('#repoCount').text(counter);
+        // $('#repoCount').text(counter);
     })
 
     return (

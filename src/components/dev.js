@@ -15,8 +15,7 @@ class GithubRepos {
     }
 }
 
-function getRest() {
-// $(document).ready(function() {
+$(document).ready(function() {
     console.log("Document ready trigger");
     const octokit = new Octokit();
 
@@ -25,90 +24,36 @@ function getRest() {
         authorization: 'token 75c36c5712b6c0b6cc8d7c8cb834bb9db4ea94a6'
     })
     .then(({ data }) => {
-          let output = new GithubRepos();
+          let output = [new GithubRepos()];
           data.forEach((repo) => {
-               output.push(new GithubRepos(repo.id, repo.name, repo.html_url, repo.owner.login, repo.owner.owner.url, repo.created_at, repo.tags_url));
+               output.push(new GithubRepos(repo.id, repo.name, repo.html_url, repo.owner.login, repo.owner.url, repo.created_at.substring(0,10), repo.tags_url));
           })
           $('#repoCount').text(data.length);
-          receivedGithubCallback(output);
-    })
+          repoList = receivedGithubCallback(output);
+    });
     // .catch(({ exception }) => {
     //     console.log(exception);
     // })
     // https://api.github.com/users/lou429/repos
-// })
-}
+})
 
 function receivedGithubCallback(data)
 {
     let counter = 0;
+    let localList = [new GithubRepos()];
     data.forEach(cardInfo => {
-        $('.dev-card-list').append($("<Card date={cardInfo.date} projectName={cardInfo.projectName}/>"));
+        localList.push(cardInfo);
         console.log(cardInfo);
         counter++; 
     });
 
-    $('.repoCount').text(counter);
+    $('#repoCount').text(counter);
+    return localList;
 }
 
+let repoList = [new GithubRepos()];
+
 function Development() {
-    // async function getGithubRepos() {
-    //     const octokit = new Octokit();
-    //     console.log("Running result func");
-    //     let receivedResult = [new GithubRepos()];
-    //     console.log("Running first variable func: ");
-    //     let result = () => {
-    //         debugger;
-    //         do {
-    //             setTimeout(50);
-    //             console.log("Null counter: " + counter++);
-    //         receivedResult = () => {
-    //             octokit.request('GET /users/{user}/repos', {
-    //                 user: 'lou429',
-    //                 type: 'public',
-    //                 authorization: 'token 75c36c5712b6c0b6cc8d7c8cb834bb9db4ea94a6'
-    //             })
-    //             // .then((response) => response.json())
-    //             .then(({data}) => {
-    //                 data = data.json();
-    //                 var list = [new GithubRepos()];
-    //                 data.forEach(repo => {
-    //                         let i = new GithubRepos(repo.id, repo.name, repo.url, repo.owner.login, repo.owner.owner.url, repo.created_at, repo.tags_url); 
-    //                         list.push(i);
-    //                         console.log("PUSHED: " + i);
-    //                         console.log("next call");                          
-    //                 });
-    //                 console.log("List: " + list);
-    //                 return list;
-    //             })
-    //             .catch(({exception}) => {
-    //                 console.log(exception);
-    //             });
-    //             return [new GithubRepos()];
-    //         };
-    //         } while(receivedResult === null);
-    //         console.log("Func result: " + receivedResult);
-    //         return receivedResult;
-    //     };
-    //     console.log("Final func call result is: "+ result)
-    //     return result;
-    // }
-
-    // async function returnGithubRepos() {
-    //     let repoList = await getGithubRepos();
-    //     // while(repoList != null)
-    //     //     setTimeout(50); 
-    //     console.log("Final received result: " + repoList);
-        
-
-    //     // repoList.forEach((val) => {     RepoList.push(val); });
-    //     // document.getElementById("repoCount").innerHTML = repoList.length;
-
-    //     return repoList;
-    // }
-
-    // let repos = returnGithubRepos();
-
     return (
         <div className="container">
             <div className="row">
