@@ -21,3 +21,14 @@
     font-family: 'Montserrat', sans-serif;
     color: white; 
 }
+
+.nav-link-src-active {
+    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-backdrop-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+}
+
+

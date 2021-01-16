@@ -1,8 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 import NavLink from './navlink.js';
+import $ from 'jquery';
 import './navbar.scss';
 
-function NavBar(props) {
+// $(document).ready(function() {
+//     $('.nav-link-source').each(function(index, obj) {
+//         if($(obj).attr("href") === document.URL.split('/')[1])
+//             $(this).attr('class', "nav-link-source-active");
+//     })
+// });
+
+$(document).ready(function() {
+    let url = (document.URL);
+    url = "/" + url.split('/')[3];
+    $('.nav-link-body').each(function() {
+        $(this.childNodes[0]).attr('class', 'nav-link-src' + (url === $(this.childNodes[0]).attr('href') ? "-active" : ''));
+    });
+});
+
+function NavBar() {
     return (
         <div className="navbar">
             <div className="nav-content-container">
