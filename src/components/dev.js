@@ -27,7 +27,7 @@ function getRest() {
     .then(({ data }) => {
           let output = new GithubRepos();
           data.forEach((repo) => {
-               output.push(new GithubRepos(repo.id, repo.name, "", repo.owner.login, repo.owner.owner.url, repo.created_at, repo.tags_url));
+               output.push(new GithubRepos(repo.id, repo.name, repo.html_url, repo.owner.login, repo.owner.owner.url, repo.created_at, repo.tags_url));
           })
           $('#repoCount').text(data.length);
           receivedGithubCallback(output);

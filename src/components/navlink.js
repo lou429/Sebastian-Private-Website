@@ -5,7 +5,7 @@ import $ from 'jquery';
 function NavLink(props) {
     return (
         <div className="nav-link-body">
-            <a className="nav-link-src" href={props.href}>
+            <a href={props.href}>
                 {props.children}
             </a>
         </div>

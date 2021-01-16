@@ -28,9 +28,9 @@ function Card(props) {
     
     $(document).ready(function() {
         let counter = 0;
-        $('.dev-card-avatar-image').each(function(index, obj) {
-            if($(obj).attr('src') === 'undefined.png')
-                $(obj).attr('class', 'dev-card-avatar-image-no-image');
+        $('.dev-card-avatar-image').each(function() {
+            if($(this).attr('src') === 'undefined.png')
+                $(this).attr('class', 'dev-card-avatar-image-no-image');
             counter++;
         });
         // TODO: Remove this once a better way to load repo data 

@@ -6,8 +6,8 @@ $linear-gradient-secondary: #e52ee5;
 $nav-color-main: #222; 
 $nav-color-secondary: rgb(47,47,47); 
 
-$card-color-primary: #201c29;
-$card-color-secondary: #17141d;
+$card-color-primary: #272727;
+$card-color-secondary: #1b1b1b;
 
 $primary-text-color: black; 
 
@@ -16,6 +16,7 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
+  animation: 2s;
 }
 
 code {
