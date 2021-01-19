@@ -7,6 +7,7 @@ function Home(props) {
             <h1 className="heading">
                 This website is currently under construction!
             </h1>
+            <br/>
             <div className="image-heading">
                 <img src="./icons/widget.png" alt="Error"></img>
             </div>
