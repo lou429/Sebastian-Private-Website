@@ -9,20 +9,8 @@ import User from "./components/UserPage.js";
 import {Octokit} from "@octokit/rest";
 import $ from 'jquery';
 import './style.scss';
-class GithubRepos {
-    constructor(id, projectName, projectUrl, creatorName, creatorUrl, date, tagsUrl) {
-        this.id = id;
-        this.projectName = projectName;
-        this.projectUrl = projectUrl;
-        this.creatorName = creatorName;
-        this.creatorUrl = creatorUrl;
-        this.date = date;
-        this.tagsUrl = tagsUrl;
-    }
-}
 
 function App() {
-
 $(document).ready(function () {
         const octokit = new Octokit();
 
@@ -87,6 +75,18 @@ return (
         </div>
     </div>
 );
+}
+
+class GithubRepos {
+    constructor(id, projectName, projectUrl, creatorName, creatorUrl, date, tagsUrl) {
+        this.id = id;
+        this.projectName = projectName;
+        this.projectUrl = projectUrl;
+        this.creatorName = creatorName;
+        this.creatorUrl = creatorUrl;
+        this.date = date;
+        this.tagsUrl = tagsUrl;
+    }
 }
 
 export default App;
