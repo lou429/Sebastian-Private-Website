@@ -48,8 +48,8 @@ function NavBar() {
                             id="github-profile"
                             src="https://github.com/lou429.png"
                             alt="Github profile"
-                            height="40"
-                            width="40"/>
+                            height="40px"
+                            width="40px"/>
                     </a>
                 </div>
             </div>

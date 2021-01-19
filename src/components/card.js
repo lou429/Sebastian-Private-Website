@@ -6,32 +6,30 @@ import $ from 'jquery';
 
 
 function Card(props) {
-    async function getGithubTags(tagsUrl) {
-        let tagList = [{tagName: ""}];
-        tagList.pop();
+    // async function getGithubTags(tagsUrl) {
+    //     let tagList = [{tagName: ""}];
+    //     tagList.pop();
 
-        const octokit = new Octokit();
-        await octokit.request('GET /users/{user}/repos', {
-            user: ''
-        })
-        .then(({ data }) => {
-            data.forEach((tags) => {
-                tagList.push(tags);
-            })
-        })
-        .catch(({ exception }) => {
-            console.log(exception);
-        });
+    //     const octokit = new Octokit();
+    //     await octokit.request('GET /users/{user}/repos', {
+    //         user: ''
+    //     })
+    //     .then(({ data }) => {
+    //         data.forEach((tags) => {
+    //             tagList.push(tags);
+    //         })
+    //     })
+    //     .catch(({ exception }) => {
+    //         console.log(exception);
+    //     });
 
-        return tagList;
-    }
+    //     return tagList;
+    // }
     
     $(document).ready(function() {
-        let counter = 0;
         $('.dev-card-avatar-image').each(function() {
             if($(this).attr('src') === 'undefined.png')
                 $(this).attr('class', 'dev-card-avatar-image-no-image');
-            counter++;
         });
         // TODO: Remove this once a better way to load repo data 
         // $('#repoCount').text(counter);
@@ -57,6 +55,7 @@ function Card(props) {
                 </div>
             </div>
             <div className="dev-card-tags">
+                <a>{props.tagsUrl}</a>
                     {/* TODO: Return coding tag from github */}
                     {
                         // getGithubTags(props.tagsUrl).map((tag) => {

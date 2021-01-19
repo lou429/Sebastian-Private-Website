@@ -43,13 +43,20 @@
 }
 
 .content-end {
-    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
+    // background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
     transform: scale(10px,10px);
 }
 
 .content-end-container {
     padding: 1px; 
-    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
+    // background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
     background-size: 40px;
     // transform: scale(10px,10px);z
+}
+
+.content-end-container a {
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
 }
