@@ -19,15 +19,19 @@ $(document).ready(function() {
         $(node).attr('class', 'nav-link-src' + modClass);
         if(modClass === '') {
             $(node).hover(function() {
-                $('.nav-link-src-active').css('font-size', '24px');
+                // $('.nav-link-src-active').css('font-size', '24px');
             });
             $(node).mouseleave(function() {
-                $('.nav-link-src-active').css('font-size', '28px');
+                // $('.nav-link-src-active').css('font-size', '28px');
             })
         }
         else {
-            $(node).css("font-size", "28px");
-            $(node).prop('disabled', false);
+            $(node).hover(function() {
+                // $('.nav-link-src-active').css('font-size', '24px');
+            });
+            $(node).mouseleave(function() {
+                // $('.nav-link-src-active').css('font-size', '28px');
+            })
         }
     });
 });

@@ -1,7 +1,10 @@
 @import "src/index";
+@import 'components/gradient';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 body {
     background-color: $background-color-primary;
+    font-family: 'Montserrat', sans-serif;
     height: 100%;
     min-height: 700px;
     margin: 0;
@@ -34,29 +37,27 @@ body {
     padding: $border;
     border: solid $border transparent;
     min-height: 70%;
-    background: linear-gradient(270deg, #ff8a00, #e52ee5);
-    background-size: 400% 400%;
-      // background-size: 400% 400%;
-  
-      -webkit-animation: gradient-anim 5s ease infinite;
-      -moz-animation: gradient-anim 5s ease infinite;
-      animation: gradient-anim 5s ease infinite;
   }
-  
-  @-webkit-keyframes gradient-anim {
-      0%{background-position:1% 0%}
-      50%{background-position:99% 100%}
-      100%{background-position:1% 0%}
+
+    //Animation
+  .base-content-container, #github-profile, .nav-link-src-active, .nav-link-src:hover {
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    
+    $time: 11s;
+    
+    // background-size: 400% 400%; 
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;
   }
-  @-moz-keyframes gradient-anim {
-      0%{background-position:1% 0%}
-      50%{background-position:99% 100%}
-      100%{background-position:1% 0%}
-  }
-  @keyframes gradient-anim {
-      0%{background-position:1% 0%}
-      50%{background-position:99% 100%}
-      100%{background-position:1% 0%}
+
+  .nav-link-src-active, .nav-link-src:hover {
+    text-shadow: none;
+    background-clip: text;
+    -webkit-backdrop-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
   }
 
   .base-content-row {

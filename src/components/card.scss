@@ -70,7 +70,7 @@
 }
 
 .dev-card-header h2:hover{
-    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
+    background: linear-gradient(90deg, $linear-gradient-first, $linear-gradient-second);
     text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
@@ -79,7 +79,7 @@
 }
 
 .dev-card-body a:hover{
-    background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
+    background: linear-gradient(90deg, $linear-gradient-first, $linear-gradient-second);
     text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;

@@ -22,15 +22,7 @@ class GithubRepos {
 }
 
 function App() {
-    // $(document).ready(function() {     let i = $('.base-content-container');
-    // console.log(i);     for(var x = 0; x !== 361; x++) {
-    // $(i).attr('background', "linear-gradient(" + x + "deg,
-    // $linear-gradient-primary, $linear-gradient-secondary 100%)");         if(x
-    // === 360)             x = 0;
-    // }
-// debugger; let deg = cg.substr(cg.indexOf("("), cg.indexOf(','));
-// console.log("DEG: "); console.log(deg); $(i).attr('background', deg++); }) /
-// api call
+
 $(document).ready(function () {
         const octokit = new Octokit();
 
