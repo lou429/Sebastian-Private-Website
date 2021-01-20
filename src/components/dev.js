@@ -53,7 +53,7 @@ function Development(props) {
                 <h1>Repos: <a id="repoCount" alt="Repo count" href="https://github.com/lou429?tab=repositories" target="_blank" rel="noopener noreferrer">0</a></h1>
                 <div className="dev-card-list-container">
                     <div className="dev-card-list">
-                        {repoList !== [new GithubRepos()] ? repoList.map((repo, index) => (repo !== undefined ? <Card key={index} id={repo.id} projectName={repo.projectName} projectUrl={repo.projectUrl} creatorUrl={repo.creatorUrl} creatorName={repo.creatorName} date={repo.date} languages_url={repo.languages_url} /> : '')) : ''}
+                        {repoList !== [new GithubRepos()] ? repoList.map((repo, index) => (repo !== undefined ? <Card key={index} id={repo.id} projectName={repo.projectName} projectUrl={repo.projectUrl} creatorUrl={repo.creatorUrl} creatorName={repo.creatorName} date={repo.date} languages_url={repo.languages_url} description={repo.description} /> : '')) : ''}
                         {/* {repoList !== [new GithubRepos()] ? repoList.map(repo => (repo !== undefined ? <Card key={repo.id} {...repo} /> : '')) : ''} */}
                     </div>
                 </div>
@@ -63,17 +63,18 @@ function Development(props) {
 }
 
 function receivedGithubCallback(data) {
-    let localList = [new GithubRepos()];
+    let localList = [];
     data.forEach(cardInfo => {
-        if(cardInfo !== null && cardInfo.name !== null && !cardInfo.private)
-            localList.push(new GithubRepos(cardInfo.id, cardInfo.name, cardInfo.html_url, cardInfo.owner.login, cardInfo.owner.html_url, cardInfo.created_at, cardInfo.languages_url));
+        if(cardInfo !== null && !cardInfo.private)
+            localList.push(new GithubRepos(cardInfo.id, cardInfo.name, cardInfo.html_url, cardInfo.owner.login, cardInfo.owner.html_url, cardInfo.created_at, cardInfo.languages_url, cardInfo.description));
     });
-
     return localList;
 }
 
+const loremIpsum = "Est quis eu veniam eiusmod anim commodo ex nulla nulla. Ea eiusmod amet laboris enim consectetur ad eu. Nostrud fugiat aliqua nostrud deserunt consectetur consequat in aliqua mollit consequat voluptate. Veniam aliqua aute nostrud esse est qui laborum amet. Nostrud ea sunt excepteur amet. Est est do in cupidatat nulla esse id. Laborum ex ad consectetur reprehenderit amet velit commodo elit voluptate mollit pariatur. Id eiusmod enim excepteur in eiusmod magna labore minim. Et nisi voluptate magna dolore reprehenderit eu amet proident incididunt. Nostrud officia proident mollit reprehenderit quis in sunt officia et."
+
 class GithubRepos {
-    constructor(id, projectName = "", projectUrl, creatorName, creatorUrl, date = "", languages_url = "") {
+    constructor(id, projectName = "", projectUrl, creatorName, creatorUrl, date = "", languages_url = "", description) {
         this.id = id;
         this.projectName = projectName.replace(/([a-z])([A-Z])/g, '$1 $2');
         this.projectUrl = projectUrl;
@@ -81,6 +82,7 @@ class GithubRepos {
         this.creatorUrl = creatorUrl;
         this.date = date.substring(0,date.indexOf('T')).split('-').reverse().join('-'); 
         this.languages_url = languages_url.substring(languages_url.indexOf("/repos/"), languages_url.length)
+        this.description = description === null ? loremIpsum : description;
     }
 }
 
