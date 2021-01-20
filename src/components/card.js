@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './card.scss';
 import {Octokit} from "@octokit/rest";
 import $ from 'jquery';
+import Tooltip from './tooltip.js';
 
 function Card(props) {
     const [tagList, setTagList] = useState([]);
@@ -66,7 +67,7 @@ function Card(props) {
                 {
                 tagList.map((tag, index) => (
                     // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                    <a key={index.toString()} title={tag.count}>{tag.language}</a> 
+                    <Tooltip text={tag.count}><a key={index.toString()}>{tag.language}</a></Tooltip>
                 ))}
             </div>
         </div>
