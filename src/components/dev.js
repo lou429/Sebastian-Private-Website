@@ -14,7 +14,7 @@ function Development(props) {
 
             await octokit.request('GET /users/lou429/repos', {
                 headers: {
-                    authorization: 'token 75c36c5712b6c0b6cc8d7c8cb834bb9db4ea94a6'
+                    authorization: process.env.GITHUB_PK
                 }
             })
             .then(({data}) => {

@@ -6,7 +6,7 @@ function Tooltip(props) {
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <div className="tooltip">
             {props.children}
-            <span class="toolTipText">{props.text}</span>
+            <span className="toolTipText">{props.text}</span>
         </div>
     );
 }
