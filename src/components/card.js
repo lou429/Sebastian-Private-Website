@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useEffect} from 'react';
 import './card.scss';
 import {Octokit} from "@octokit/rest";
 import $ from 'jquery';
+import Tooltip from './tooltip.js';
+import dotenv from 'dotenv';
 
 function Card(props) {
     const [tagList, setTagList] = useState([]);
@@ -21,7 +24,7 @@ function Card(props) {
                 return setTagList(["none"]);
             await octokit.request('GET ' + props.languages_url, {
                 headers: {
-                    authorization: 'token 75c36c5712b6c0b6cc8d7c8cb834bb9db4ea94a6'
+                    authorization: process.env.GITHUB_PK
                 }
             }).then(({data}) => {
                 setTagList(receivedTagCallback(data));
@@ -63,11 +66,7 @@ function Card(props) {
                     </div>
                 </div>
             <div className="dev-card-tags">
-                {
-                tagList.map((tag, index) => (
-                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                    <a key={index.toString()} title={tag.count}>{tag.language}</a> 
-                ))}
+                {tagList.map((tag, index) => (<Tooltip key={props.id + ' ' + index.toString()} text={tag.count}><a className="dev-card-tag">{tag.language}</a></Tooltip>))}
             </div>
         </div>
     );
