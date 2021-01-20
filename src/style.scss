@@ -57,7 +57,11 @@ body {
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
-    cursor: default;
+    cursor: pointer;
+  }
+
+  #github-profile {
+    cursor: pointer;
   }
 
   .base-content-row {

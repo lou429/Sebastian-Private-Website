@@ -70,8 +70,15 @@
 }
 
 .dev-card-header h2:hover{
-    background: linear-gradient(90deg, $linear-gradient-first, $linear-gradient-second);
-    text-shadow: none;
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    
+    $time: 11s;
+    
+    // background-size: 400% 400%; 
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
@@ -79,8 +86,15 @@
 }
 
 .dev-card-body a:hover{
-    background: linear-gradient(90deg, $linear-gradient-first, $linear-gradient-second);
-    text-shadow: none;
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    
+    $time: 11s;
+    
+    // background-size: 400% 400%; 
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
@@ -161,7 +175,15 @@
 }
 
 .dev-card-tags a:hover {
-    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    
+    $time: 11s;
+    
+    // background-size: 400% 400%; 
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;
     text-shadow: none;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
