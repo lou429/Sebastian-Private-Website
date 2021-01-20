@@ -219,3 +219,15 @@
 .dev-card-list::-webkit-scrollbar-track {
     background: linear-gradient(90deg, $card-color-primary, $card-color-primary, 1px, $card-color-secondary, 0, $card-color-secondary);
 }
+
+.dev-card-header a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.dev-card-header a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
