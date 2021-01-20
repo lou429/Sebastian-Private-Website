@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useEffect} from 'react';
 import './card.scss';
 import {Octokit} from "@octokit/rest";
@@ -64,11 +65,7 @@ function Card(props) {
                     </div>
                 </div>
             <div className="dev-card-tags">
-                {
-                tagList.map((tag, index) => (
-                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                    <Tooltip text={tag.count}><a key={index.toString()}>{tag.language}</a></Tooltip>
-                ))}
+                {tagList.map((tag, index) => (<Tooltip key={props.id + ' ' + index.toString()} text={tag.count}><a className="dev-card-tag">{tag.language}</a></Tooltip>))}
             </div>
         </div>
     );
