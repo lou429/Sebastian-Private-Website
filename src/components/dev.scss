@@ -1,0 +1,23 @@
+@import "src/index";
+
+#repoCount:link {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: auto;
+}
+
+#repoCount:visited {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: auto;
+}
+
+#repoCount:hover {
+    cursor: pointer;
+}
+
+.dev-card-list {
+    padding-top: 80px;
+
+}
+

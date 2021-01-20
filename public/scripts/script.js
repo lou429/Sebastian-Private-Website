@@ -7,7 +7,7 @@ window.onload(function() {
     };
 
     WriteCookie("person", person, 1); 
-    console.log(document.cookie);   
+    console.log("Cookie :" + document.cookie);   
 });
 
 function WriteCookie(name, value, days) {

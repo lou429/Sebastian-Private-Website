@@ -4,5 +4,12 @@
         ".vscode{,/**}"
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/fa0afa44-91d3-4930-b003-e606ea8d09c5/resourceGroups/Sebastain-Web-App/providers/Microsoft.Web/sites/Sebastian-Web-App",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "cSpell.words": [
+        "Repos",
+        "octokit"
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+     }
 }

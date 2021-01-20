@@ -1,0 +1,252 @@
+@import "src/index";
+
+.dev-card-list-container {
+    // padding: 3rem;
+}
+
+.dev-card-list {
+    display: flex;
+    overflow-x: scroll;
+    padding: 3rem;
+}
+
+.dev-card {
+    color: white; 
+    flex-direction: column;
+    height: 350px;
+    max-width: 280px;
+    min-width: 250px;
+    padding: 1.5rem;
+    text-decoration: none;
+    border-radius: 16px;
+    background: $card-color-secondary;
+    box-shadow: -1rem 0 3rem #000;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+}
+
+.dev-card-body {
+    position: relative;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    align-items: center;
+}
+ 
+.dev-card-half-circle {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none; 
+    stroke: #ff8a00;
+    stroke-width: 8;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.dev-card-header { 
+    margin-bottom: auto;
+}
+
+.dev-card-header p {
+    font-size: 14px;
+    margin: 0 0 0 0;
+    color: #7a7a8c;
+}
+
+.dev-card-header h2 {
+    font-size: 20px;
+    margin: .25rem 0 auto;
+    text-decoration: none;
+    color: inherit;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dev-card-header h2:hover{
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;text-shadow: none;
+    background-clip: text;
+    -webkit-backdrop-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+}
+
+.dev-card-body a:hover{
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    
+    $time: 11s;
+    
+    // background-size: 400% 400%; 
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;text-shadow: none;
+    background-clip: text;
+    -webkit-backdrop-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    cursor: auto;
+}
+
+.dev-card-author-name a:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.dev-card-author-name a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.dev-card-avatar-link {
+    grid-area: auto;
+    align-self: start;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.dev-card-avatar-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    display: block;
+    overflow: hidden;
+    margin: 16px 10px;
+}
+
+.dev-card-avatar-link img:hover {
+    filter: grayscale(0%);
+}
+
+.dev-card-author-name {
+    grid-area: auto;
+    box-sizing: border-box;
+}
+
+.dev-card-author-name-prefix {
+    font-style: normal;
+    font-weight: 700;
+    color: #7a7a8c;
+}
+
+.dev-card-tags {
+    margin: 1rem 0 2rem;
+    padding: .5rem 0 1rem;
+    line-height: 2;
+    margin-bottom: 0;
+    display: inline-block;
+    grid-area: auto;
+    text-align: center;
+}
+
+.dev-card-tags a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .5rem;
+    color: #7a7a8c;
+    text-transform: uppercase;
+    font-size: .66rem;
+    border: 3px solid #28242f;
+    border-radius: 2rem;
+    padding: .2rem .85rem .25rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.dev-card-tags a.dev-card-tags:not(:first-child) {
+    margin-left: 20px;
+}
+
+.dev-card-tags a:hover {
+    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+    background-size: 1600% 1600%;
+    
+    $time: 11s;
+    
+    // background-size: 400% 400%; 
+    -webkit-animation: gradient-anim $time ease infinite;
+    -moz-animation: gradient-anim $time ease infinite;
+    animation: gradient-anim $time ease infinite;
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-clip: text;
+    border-color: white;
+}
+
+.dev-card:focus-within~.dev-card, .dev-card:hover~.dev-card {
+    transform: translateX(130px);
+}
+
+.dev-card:hover {
+    transform: translateY(-1rem);
+}
+
+.dev-card:not(:first-child) {
+    margin-left: -130px;
+}
+
+.dev-card-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.dev-card-list::-webkit-scrollbar-thumb { 
+    background: $card-color-primary;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.dev-card-list::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, $card-color-primary, $card-color-primary, 1px, $card-color-secondary, 0, $card-color-secondary);
+}
+
+.dev-card-header a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.dev-card-header a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.dev-card-description {
+    padding: 1rem;
+    height: 120px;
+    width: 220px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8a00;
+}

@@ -1,7 +1,18 @@
 .child-content-container {
-
+    padding: 10px;
+    display: block;
+    align-items: center;
+    position: relative;
 }
 
 .child-content-container h1 {
     text-decoration: dashed;
+    top: 50%;
+    left: 50%;
+}
+
+.image-heading {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    margin-bottom: 10px;
 }

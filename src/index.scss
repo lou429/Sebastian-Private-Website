@@ -1,24 +1,23 @@
-$background-color: rgb(138, 138, 138);
+$background-color-primary: rgb(138, 138, 138);
+$background-color-secondary: #575757;
 
-body {
-  background-color: $background-color;
-  height: 100%;
-  margin: 0;
-  overflow-x: hidden;
-}
+$linear-gradient-first: #ff0000;
+$linear-gradient-second: #FF8a00;
+$linear-gradient-third: #ffee00;
+$linear-gradient-fourth: #18ff00;
+$linear-gradient-fifth: #00fdff;
+$linear-gradient-sixth: #0032ff;
+$linear-gradient-seventh: #fd00ff;
+$linear-gradient-eighth: #ff0000;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+$time: 11s;
 
-#root {
-  height: auto !important;
-  color: white; 
-}
+$nav-color-main: #222; 
+$nav-color-secondary: rgb(47,47,47); 
 
-.App {
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-}
+$card-color-primary: #272727;
+$card-color-secondary: #1b1b1b;
+
+$primary-text-color: black; 
+
+$border: 4px;
