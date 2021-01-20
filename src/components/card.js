@@ -46,7 +46,7 @@ function Card(props) {
 
                 <div className="dev-card-description">
                     <div className="dev-card-description-body">
-                        <p>{props.description}</p>
+                        <p>{props.description || ""}</p>
                     </div>
                 </div>
 

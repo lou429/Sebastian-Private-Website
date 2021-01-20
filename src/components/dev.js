@@ -6,6 +6,7 @@ import './dev.scss';
 
 function Development(props) {
     const [repoList, setRepoList] = useState([]);
+    const [repoCount, setRepoCount] = useState(0);
 
     useEffect(function getApiData() {
         async function getData() {
@@ -18,7 +19,7 @@ function Development(props) {
             })
             .then(({data}) => {
                 setRepoList(receivedGithubCallback(data));
-                $("#repoCount").text(repoList.length);
+                setRepoCount(data.length);
             })
             .catch(({exception}) => {
                 console.log(exception);
@@ -28,33 +29,17 @@ function Development(props) {
         getData(); 
     }, [])
 
-    $(window).on('load', function() {
-        $('dev-card').on("remove", onCardChange());
-        $('.dev-card h2').each(function () {
-            if($(this).text() === " " || $(this).text() === "")
-                $(this).parent().parent().parent().remove();
-        })
-    })
-
-    function onCardChange() {
-        let counter = 0;
-        $('.dev-card').each(function() {
-            counter++;
-        })
-        $('#repoCount').text(counter);
-    }
-
     return (
         <div className="container">
             <div className="row">
                 <h1>Github account</h1>
             </div>
             <div className="row">
-                <h1>Repos: <a id="repoCount" alt="Repo count" href="https://github.com/lou429?tab=repositories" target="_blank" rel="noopener noreferrer">0</a></h1>
+                <h1>Repos: <a id="repoCount" alt="Repo count" href="https://github.com/lou429?tab=repositories" target="_blank" rel="noopener noreferrer">{repoCount}</a></h1>
                 <div className="dev-card-list-container">
                     <div className="dev-card-list">
-                        {repoList !== [new GithubRepos()] ? repoList.map((repo, index) => (repo !== undefined ? <Card key={index} id={repo.id} projectName={repo.projectName} projectUrl={repo.projectUrl} creatorUrl={repo.creatorUrl} creatorName={repo.creatorName} date={repo.date} languages_url={repo.languages_url} description={repo.description} /> : '')) : ''}
-                        {/* {repoList !== [new GithubRepos()] ? repoList.map(repo => (repo !== undefined ? <Card key={repo.id} {...repo} /> : '')) : ''} */}
+                        {/* {repoList !== [new GithubRepos()] ? repoList.map((repo, index) => (repo !== undefined ? <Card key={index} id={repo.id} projectName={repo.projectName} projectUrl={repo.projectUrl} creatorUrl={repo.creatorUrl} creatorName={repo.creatorName} date={repo.date} languages_url={repo.languages_url} description={repo.description} /> : '')) : ''} */}
+                        {repoList !== [new GithubRepos()] ? repoList.map(repo => (repo !== undefined ? <Card key={repo.id} {...repo} /> : '')) : ''}
                     </div>
                 </div>
             </div>
@@ -71,8 +56,6 @@ function receivedGithubCallback(data) {
     return localList;
 }
 
-const loremIpsum = "Est quis eu veniam eiusmod anim commodo ex nulla nulla. Ea eiusmod amet laboris enim consectetur ad eu. Nostrud fugiat aliqua nostrud deserunt consectetur consequat in aliqua mollit consequat voluptate. Veniam aliqua aute nostrud esse est qui laborum amet. Nostrud ea sunt excepteur amet. Est est do in cupidatat nulla esse id. Laborum ex ad consectetur reprehenderit amet velit commodo elit voluptate mollit pariatur. Id eiusmod enim excepteur in eiusmod magna labore minim. Et nisi voluptate magna dolore reprehenderit eu amet proident incididunt. Nostrud officia proident mollit reprehenderit quis in sunt officia et."
-
 class GithubRepos {
     constructor(id, projectName = "", projectUrl, creatorName, creatorUrl, date = "", languages_url = "", description) {
         this.id = id;
@@ -82,7 +65,7 @@ class GithubRepos {
         this.creatorUrl = creatorUrl;
         this.date = date.substring(0,date.indexOf('T')).split('-').reverse().join('-'); 
         this.languages_url = languages_url.substring(languages_url.indexOf("/repos/"), languages_url.length)
-        this.description = description === null ? loremIpsum : description;
+        this.description = description;
     }
 }
 
