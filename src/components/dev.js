@@ -59,7 +59,7 @@ function receivedGithubCallback(data) {
 class GithubRepos {
     constructor(id, projectName = "", projectUrl, creatorName, creatorUrl, date = "", languages_url = "", description) {
         this.id = id;
-        this.projectName = projectName.replace(/([a-z])([A-Z])/g, '$1 $2');
+        this.projectName = projectName.includes("-") ? projectName.split('-').join(' ') :  projectName.replace(/([a-z])([A-Z])/g, '$1 $2');
         this.projectUrl = projectUrl;
         this.creatorName = creatorName;
         this.creatorUrl = creatorUrl;
