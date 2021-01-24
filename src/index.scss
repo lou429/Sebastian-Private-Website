@@ -15,9 +15,14 @@ $time: 11s;
 $nav-color-main: #222; 
 $nav-color-secondary: rgb(47,47,47); 
 
-$card-color-primary: #272727;
-$card-color-secondary: #1b1b1b;
+$card-color-primary: #1b1b1b;
+$card-color-secondary: #303030;
+$card-border: 2px solid #000000;
 
 $primary-text-color: white; 
 
 $border: 4px;
+
+$linear-gradient-full: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+$linear-gradient-background-size: 1600% 1600%;
+$linear-anim-type: gradient-anim $time ease infinite;

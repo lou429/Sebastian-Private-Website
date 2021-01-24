@@ -14,18 +14,19 @@
     color: white; 
     flex-direction: column;
     height: 350px;
-    max-width: 320px;
+    max-width: 280px;
     min-width: 250px;
     padding: 1.5rem;
     text-decoration: none;
     border-radius: 16px;
-    background: $card-color-secondary;
+    background: $card-color-primary;
     box-shadow: -1rem 0 3rem #000;
     transition: .2s;
     margin: 0;
     scroll-snap-align: start;
     clear: both;
     position: relative;
+    border: $card-border;
 }
 
 .dev-card-body {
@@ -69,11 +70,12 @@
 }
 
 .dev-card-header h2:hover{
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;text-shadow: none;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
+    text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
@@ -81,15 +83,11 @@
 }
 
 .dev-card-body a:hover{
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    
-    $time: 11s;
-    
-    // background-size: 400% 400%; 
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;text-shadow: none;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
@@ -170,15 +168,11 @@
 }
 
 .dev-card-tags a:hover {
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    
-    $time: 11s;
-    
-    // background-size: 400% 400%; 
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
     text-shadow: none;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

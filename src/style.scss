@@ -41,12 +41,11 @@ body {
 
     //Animation
   .base-content-container, #github-profile, .nav-link-src-active, .nav-link-src:hover {
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    $time: 11s;
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
   }
 
   .nav-link-src-active, .nav-link-src:hover {
