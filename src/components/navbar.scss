@@ -39,6 +39,13 @@
     // transform: scale(10px,10px);z
 }
 
+.nav-link-src:hover {
+    text-decoration: underline;
+    text-decoration-color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+}
+
 .content-end-container a {
     height: 40px;
     width: 40px;
@@ -50,4 +57,17 @@
     // background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
     padding: 4px;
     // border: solid $border transparent;
+}
+
+#github-profile:hover {
+    animation: Profile-Animation 2s ease;
+}
+
+@keyframes Profile-Animation {
+    to {
+        transform: rotateZ(0deg);
+    }
+    from {
+        transform: rotateZ(360deg);
+    }
 }

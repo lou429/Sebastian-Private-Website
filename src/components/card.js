@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+  /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useEffect} from 'react';
 import './card.scss';
 import {Octokit} from "@octokit/rest";
@@ -30,7 +30,7 @@ function Card(props) {
                 setTagList(receivedTagCallback(data));
             }).catch(({exception}) => {
                 console.log(exception);
-                setTagList(["none"]);
+                setTagList(receivedTagCallback(["none"]));
             });
         }
         getData();
@@ -42,7 +42,7 @@ function Card(props) {
                 <p>{props.date || "01-01-2000"}</p>
                 <a href={props.projectUrl} alt="Project url" target="_blank" rel="noopener noreferrer">
                     <h2 className="card-profile">
-                        {props.projectName || " "}
+                        {props.projectName || ""}
                     </h2>
                 </a>
             </div>

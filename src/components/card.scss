@@ -244,3 +244,46 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #ff8a00;
 }
+
+.dev-card-avatar-image {
+    animation: Rotate-Avatar-color 3s ease;
+}
+
+// .dev-card-avatar-image:hover {
+//     animation: Rotate-Avatar 3s ease-out 0s;
+// }
+
+@keyframes Rotate-Avatar-color {
+    to {
+        transform: rotate(0deg);
+        filter: grayscale(0%);
+    }
+    from {
+        transform: rotate(360deg);
+        filter: grayscale(100%);
+    }
+}
+
+@keyframes Rotate-Avatar {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+.dev-card-half-circle {
+    animation: Card-circle-animation 2s ease;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes Card-circle-animation {
+    to {
+        transform: rotateZ(0deg);
+    }
+    from {
+        transform: rotateZ(360deg);
+    }
+}
