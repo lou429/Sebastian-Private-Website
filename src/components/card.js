@@ -74,9 +74,10 @@ function Card(props) {
 
 function receivedTagCallback(data) {
     let result = []
-    Object.entries(data).map((tag) => (
-        result.push(new GithubTag(tag))
-    ))
+    Object.entries(data).map((tag, index) => {
+        if(index < 3)
+            result.push(new GithubTag(tag))
+    })
     return result; 
 }
 

@@ -1,6 +1,6 @@
 {
-  "name": "home-web",
-  "version": "0.1.0",
+  "name": "Private-Website",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@octokit/rest": "^18.0.12",
@@ -47,5 +47,10 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
-  }
+  },
+  "description": "Sebastian's personal website",
+  "main": "index.js",
+  "repository": "https://github.com/lou429/Sebastian-Private-Website.git",
+  "author": "Sebastian <sebastianbednarz1999@gmail.com>",
+  "license": "MIT"
 }
