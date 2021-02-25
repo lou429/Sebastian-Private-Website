@@ -5,11 +5,12 @@
 body {
     background-color: $background-color-primary;
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
-    min-height: 700px;
-    margin: 0;
-    overflow-x: hidden;
     animation: 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 60vh;
   }
   
   code {
@@ -18,14 +19,16 @@ body {
   }
   
   #root {
-    height: 100%;
     color: white; 
+    min-height: 100%;
   }
   
-  .App {
+  .app-content-div {
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    border: 1px solid black;
+    min-height: 100%;
+    background: rgba($background-color-primary, $alpha: 0.6);
   }
   
   .dev-card-avatar-image-no-image {
@@ -40,12 +43,15 @@ body {
   }
 
     //Animation
-  .base-content-container, #github-profile, .nav-link-src-active, .nav-link-src:hover {
-    background: $linear-gradient-full;
-    background-size: $linear-gradient-background-size;
-    -webkit-animation: $linear-anim-type;
-    -moz-animation: $linear-anim-type;
-    animation: $linear-anim-type;
+  // .base-content-container, #github-profile, .nav-link-src-active, .nav-link-src:hover {
+  body {  
+    background: linear-gradient(to right top, cyan, blue);
+    min-height: 100vh;
+    // background: $linear-gradient-full;
+    // background-size: $linear-gradient-background-size;
+    // -webkit-animation: $linear-anim-type;
+    // -moz-animation: $linear-anim-type;
+    // animation: $linear-anim-type;
   }
 
   .nav-link-src-active, .nav-link-src:hover {

@@ -11,10 +11,7 @@ import './style.scss';
 
 function App() {
     return (
-        <div className="App">
-            <NavBar/>
-            <br/>
-            <br/>
+        <div className="app-content-div">
             <div id="content-wrapper" className="base-content-container">
                 <div className="base-content-row">
                     <Router>
