@@ -6,6 +6,16 @@ $container-background-color-main: rgb(87, 87, 87);
   text-align: center;
 }
 
+.base-page-wrapper {
+
+}
+
+.page-nav {
+  background: white;
+  float: left;
+  border: 1px solid red; 
+}
+
 .base-content-container {
   margin: 0px 70px;
   background-color: $container-background-color-main;
