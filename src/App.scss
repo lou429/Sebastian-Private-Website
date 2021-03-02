@@ -9,9 +9,13 @@ $container-background-color-main: rgb(87, 87, 87);
 
 .glass-page-wrapper {
   display: flex;
-  flex-direction: column;
-  overflow: auto;
+  overflow: none;
   padding: 20rem;
+}
+
+.glass-page-wrapper > div {
+  padding: 20px;
+  background-color: green; 
 }
 
 .base-page-nav {
@@ -43,15 +47,3 @@ $container-background-color-main: rgb(87, 87, 87);
   
   margin: 10px 0px;
 }
-
-
-
-// .circle1 {
-//   top: 5%;
-//   right: 15%;
-// }
-
-// .circle2 {
-//   bottom: 10%; 
-//   left: 15%
-// }

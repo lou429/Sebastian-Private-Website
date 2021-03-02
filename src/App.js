@@ -20,7 +20,13 @@ function App() {
 
             <div className="glass-page-wrapper">
                 <div className="base-page-nav">
-                    <Router>
+                    
+                    {/* TODO */}
+                    <br/>
+                </div>
+                <div className="base-content-container">
+                    <div className="base-content-row">
+                        <Router>
                             <Routes>
                                 <Route path='*' exact element={< NoPage />}/>
                                 <Route path="/" exact element={< Home />}/>
@@ -30,11 +36,6 @@ function App() {
                                 <Route path="/User" element={< User />}/>
                             </Routes>
                         </Router>
-                    {/* TODO */}
-                    <br/>
-                </div>
-                <div className="base-content-container">
-                    <div className="base-content-row">
                         <br/>
                     </div>
                 </div>
