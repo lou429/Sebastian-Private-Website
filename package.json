@@ -1,6 +1,6 @@
 {
-  "name": "home-web",
-  "version": "0.1.0",
+  "name": "Private-Website",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@octokit/rest": "^18.0.12",
@@ -8,7 +8,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.5.3",
-    "dotenv": "^8.2.0",
     "firebase": "^8.2.2",
     "history": "^5.0.0",
     "jquery": "^3.5.1",
@@ -45,5 +44,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "description": "Sebastian's personal website",
+  "main": "index.js",
+  "repository": "https://github.com/lou429/Sebastian-Private-Website.git",
+  "author": "Sebastian <sebastianbednarz1999@gmail.com>",
+  "license": "MIT"
 }

@@ -5,11 +5,12 @@
 body {
     background-color: $background-color-primary;
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
-    min-height: 700px;
-    margin: 0;
-    overflow-x: hidden;
     animation: 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 60vh;
   }
   
   code {
@@ -18,14 +19,21 @@ body {
   }
   
   #root {
-    height: 100%;
     color: white; 
+    min-height: 100%;
   }
   
-  .App {
+  .app-content-div {
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    min-height: 100%;
+    background: linear-gradient(
+      to right bottom,
+      rgba($background-color-primary, $alpha: 0.6),
+      rgba($background-color-secondary, $alpha: 0.3)
+    );
+    border: 1px solid rgba($background-color-primary, $alpha: 0.3); 
+    border-radius: 20px;
   }
   
   .dev-card-avatar-image-no-image {
@@ -40,13 +48,15 @@ body {
   }
 
     //Animation
-  .base-content-container, #github-profile, .nav-link-src-active, .nav-link-src:hover {
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    $time: 11s;
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;
+  // .base-content-container, #github-profile, .nav-link-src-active, .nav-link-src:hover {
+  body {  
+    background: linear-gradient(to right top, cyan, blue);
+    min-height: 100vh;
+    // background: $linear-gradient-full;
+    // background-size: $linear-gradient-background-size;
+    // -webkit-animation: $linear-anim-type;
+    // -moz-animation: $linear-anim-type;
+    // animation: $linear-anim-type;
   }
 
   .nav-link-src-active, .nav-link-src:hover {

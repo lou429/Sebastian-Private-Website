@@ -1,9 +1,5 @@
 @import "src/index";
 
-.dev-card-list-container {
-    // padding: 3rem;
-}
-
 .dev-card-list {
     display: flex;
     overflow-x: scroll;
@@ -14,24 +10,25 @@
     color: white; 
     flex-direction: column;
     height: 350px;
-    max-width: 320px;
+    max-width: 280px;
     min-width: 250px;
     padding: 1.5rem;
     text-decoration: none;
     border-radius: 16px;
-    background: $card-color-secondary;
+    background: $card-color-primary;
     box-shadow: -1rem 0 3rem #000;
     transition: .2s;
     margin: 0;
     scroll-snap-align: start;
     clear: both;
     position: relative;
+    border: $card-border;
 }
 
 .dev-card-body {
     position: relative;
     display: grid;
-    grid-template-columns: 75px 1fr;
+    grid-template-columns: 100px 1fr;
     align-items: center;
 }
  
@@ -69,11 +66,12 @@
 }
 
 .dev-card-header h2:hover{
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;text-shadow: none;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
+    text-shadow: none;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
@@ -81,15 +79,11 @@
 }
 
 .dev-card-body a:hover{
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    
-    $time: 11s;
-    
-    // background-size: 400% 400%; 
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;text-shadow: none;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
     background-clip: text;
     -webkit-backdrop-clip: text;
     -webkit-text-fill-color: transparent;
@@ -170,15 +164,11 @@
 }
 
 .dev-card-tags a:hover {
-    background: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
-    background-size: 1600% 1600%;
-    
-    $time: 11s;
-    
-    // background-size: 400% 400%; 
-    -webkit-animation: gradient-anim $time ease infinite;
-    -moz-animation: gradient-anim $time ease infinite;
-    animation: gradient-anim $time ease infinite;
+    background: $linear-gradient-full;
+    background-size: $linear-gradient-background-size;
+    -webkit-animation: $linear-anim-type;
+    -moz-animation: $linear-anim-type;
+    animation: $linear-anim-type;
     text-shadow: none;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -232,6 +222,16 @@
     height: 120px;
     width: 220px;
     overflow: auto;
+    margin-top: 1rem;
+}
+
+.dev-card-description p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.tooltip {
+    padding: 0px 5px 0px 5px;
 }
 
 ::-webkit-scrollbar {
@@ -249,4 +249,47 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #ff8a00;
+}
+
+.dev-card-avatar-image {
+    animation: Rotate-Avatar 3s ease;
+}
+
+// .dev-card-avatar-image:hover {
+//     animation: Rotate-Avatar 3s ease-out 0s;
+// }
+// https://www.youtube.com/watch?v=O7WbVj5apxU example for next website
+// @keyframes Rotate-Avatar-color {
+//     to {
+//         transform: rotate(0deg);
+//         filter: grayscale(0%);
+//     }
+//     from {
+//         transform: rotate(360deg);
+//         filter: grayscale(100%);
+//     }
+// }
+
+@keyframes Rotate-Avatar {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+// .dev-card-half-circle {
+//     // animation: Card-circle-animation 2s ease;
+//     // transform-origin: center;
+//     // transform-box: fill-box;
+// }
+
+@keyframes Card-circle-animation {
+    to {
+        transform: rotateZ(0deg);
+    }
+    from {
+        transform: rotateZ(360deg);
+    }
 }
