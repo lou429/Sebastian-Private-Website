@@ -11,6 +11,7 @@ $container-background-color-main: rgb(87, 87, 87);
   display: flex;
   overflow: none;
   padding: 20rem;
+  z-index: 10;
 }
 
 .glass-page-wrapper > div {
