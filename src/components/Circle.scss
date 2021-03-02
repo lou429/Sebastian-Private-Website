@@ -5,6 +5,7 @@
     width: 20rem; 
     position: absolute;
     border-radius: 20rem;
+    z-index: 3;
     background: linear-gradient(
         to right bottom, 
           $circle-primary, 
