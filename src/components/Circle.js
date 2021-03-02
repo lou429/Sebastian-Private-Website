@@ -14,8 +14,8 @@ class ICircle {
 
 function getRandomStyle(id) {
     let style; 
-    let firstRand = generateRandomNumber(1, 15);
-    let secondRand = generateRandomNumber(1, 15);
+    let firstRand = generateRandomNumber(1, 15) + '%';
+    let secondRand = generateRandomNumber(1, 15) + '%';
 
     switch(generateRandomNumber(1, 4)) {
         case 1: 
@@ -42,6 +42,12 @@ function getRandomStyle(id) {
                 bottom: secondRand
             }
             break;
+        default: 
+            style = {
+                left: firstRand, 
+                top: secondRand
+            }
+            break; 
     }
     
     return style; 
