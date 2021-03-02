@@ -26,9 +26,14 @@ body {
   .app-content-div {
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     min-height: 100%;
-    background: rgba($background-color-primary, $alpha: 0.6);
+    background: linear-gradient(
+      to right bottom,
+      rgba($background-color-primary, $alpha: 0.6),
+      rgba($background-color-secondary, $alpha: 0.3)
+    );
+    border: 1px solid rgba($background-color-primary, $alpha: 0.3); 
+    border-radius: 20px;
   }
   
   .dev-card-avatar-image-no-image {

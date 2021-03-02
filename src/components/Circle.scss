@@ -1,0 +1,18 @@
+@import "src/index";
+
+.circle {
+    height: 20rem; 
+    width: 20rem; 
+    position: absolute;
+    border-radius: 20rem;
+    background: linear-gradient(
+        to right bottom, 
+          $circle-primary, 
+          $circle-secondary
+      );   
+  }
+
+  .circle-container {
+      height: inherit;
+      width: inherit;
+    }
