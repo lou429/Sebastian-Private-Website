@@ -12,6 +12,7 @@ $container-background-color-main: rgb(87, 87, 87);
   overflow: none;
   padding: 20rem;
   z-index: 10;
+  backdrop-filter: blur(2rem);
 }
 
 .glass-page-wrapper > div {
