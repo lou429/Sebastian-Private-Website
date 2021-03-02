@@ -1,7 +1,6 @@
 import './App.scss';
-import NavBar from './components/navbar.js';
 import {BrowserRouter as Router, Routes, Route} from '../node_modules/react-router-dom';
-// import Snake from "./components/snake.js";
+import Navbar from './components/navbar.js';
 import Dev from "./components/dev.js";
 import Home from "./components/home.js";
 import SignInPage from './components/SignInPage.js';
@@ -19,11 +18,8 @@ function App() {
             <Circle/>
 
             <div className="glass-page-wrapper">
-                <div className="base-page-nav">
-                    
-                    {/* TODO */}
-                    <br/>
-                </div>
+                <Navbar/>
+                
                 <div className="base-content-container">
                     <div className="base-content-row">
                         <Router>

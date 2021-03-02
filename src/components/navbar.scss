@@ -1,6 +1,12 @@
 @import "src/index";
 
-
+.navbar-container {
+    display: flex; 
+    flex-direction: column;
+    left: 0px;
+    position: absolute;
+    min-height: 20vh;
+}
 
 #github-profile {
     // background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);

@@ -20,9 +20,7 @@ $container-background-color-main: rgb(87, 87, 87);
 }
 
 .base-page-nav {
-  background: white;
-  border: 1px solid red; 
-  float: left;
+  min-height: 40vh;
 }
 
 .base-content-container {
