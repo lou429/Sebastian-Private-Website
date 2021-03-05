@@ -1,24 +1,30 @@
 import './App.scss';
-import {BrowserRouter as Router, Routes, Route} from '../node_modules/react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/navbar.js';
+import NavbarHeading from './components/navbarHeading.js';
 import Dev from "./components/dev.js";
 import Home from "./components/home.js";
 import SignInPage from './components/SignInPage.js';
 import User from "./components/UserPage.js";
 import NoPage from "./components/NoRouteFound.js"
 import Circle from "./components/Circle.js";
-
 import './style.scss';
-
 
 function App() {
     return (
-        <div className="app-content-div">
-            
-            <Circle/>
-
+    <>
+        <Circle/>
+        <div className="page-content">
             <div className="glass-page-wrapper">
-                <Navbar/>
+                <div className="navbar-wrapper">
+                    <div className="navbar-heading">
+                        <NavbarHeading/>
+                    </div>
+                    <br/>
+                    <div className="navbar-content">
+                        <Navbar/>
+                    </div>
+                </div>
                 
                 <div className="base-content-container">
                     <div className="base-content-row">
@@ -37,6 +43,7 @@ function App() {
                 </div>
             </div>
         </div>
+    </>
     );
 }
 

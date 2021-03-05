@@ -1,24 +1,25 @@
 import React from 'react';
 import NavLink from './navlink.js';
-import $ from 'jquery';
 import './navbar.scss';
 
 function NavBar() {
     return (
-        <div className="navbar-container">
-             <div className="navbar-logo-container">
-                <div className="navbar-logo">
-                    <a href="https://github.com/lou429" target="_blank" rel="noopener noreferrer">
-                        <img id="github-profile" src="https://github.com/lou429.png" alt="Github profile" height="40px" width="40px"/>
-                    </a>
-                </div>
-            </div>
-            
+        <div className="navbar-container">           
             <div className="nav-content-container">
-                <NavLink href="/">Home</NavLink>
-                <NavLink href="/dev">Development</NavLink>
-                <NavLink href="/user">About me</NavLink>
-                <NavLink href="/contact">Contact me</NavLink>
+                <ul>
+                    <li>
+                        <NavLink href="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/dev">Dev page</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/user">About me</NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="/contact">Contact me</NavLink>
+                    </li>
+                </ul>
             </div>
         </div>
     );
