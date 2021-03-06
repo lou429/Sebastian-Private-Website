@@ -6,6 +6,7 @@
     position: absolute;
     border-radius: 50%;
     z-index: 3;
+    filter: blur(2px);
     background: linear-gradient(
         to right bottom, 
           $circle-primary, 

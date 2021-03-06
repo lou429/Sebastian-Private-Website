@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import {Octokit} from "@octokit/rest";
-import $ from 'jquery';
 import Card from './card';
 import './dev.scss';
 

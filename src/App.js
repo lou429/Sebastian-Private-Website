@@ -1,7 +1,6 @@
 import './App.scss';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Navbar from './components/navbar.js';
-import NavbarHeading from './components/navbarHeading.js';
+import NavBar from './components/navbar.js'
 import Dev from "./components/dev.js";
 import Home from "./components/home.js";
 import SignInPage from './components/SignInPage.js';
@@ -12,23 +11,16 @@ import './style.scss';
 
 function App() {
     return (
-    <>
-        <Circle/>
-        <div className="page-content">
+        <div className="page-wrapper">
+            {/* Randomly drawn circles */}
+            < Circle/>
+
             <div className="glass-page-wrapper">
-                <div className="navbar-wrapper">
-                    <div className="navbar-heading">
-                        <NavbarHeading/>
-                    </div>
-                    <br/>
-                    <div className="navbar-content">
-                        <Navbar/>
-                    </div>
-                </div>
-                
-                <div className="base-content-container">
-                    <div className="base-content-row">
-                        <Router>
+                <NavBar/>
+
+                <div className="content-wrapper">
+                    {/* React router nav pages */}
+                    <Router>
                             <Routes>
                                 <Route path='*' exact element={< NoPage />}/>
                                 <Route path="/" exact element={< Home />}/>
@@ -38,12 +30,9 @@ function App() {
                                 <Route path="/User" element={< User />}/>
                             </Routes>
                         </Router>
-                        <br/>
-                    </div>
                 </div>
             </div>
         </div>
-    </>
     );
 }
 
