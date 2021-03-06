@@ -16,20 +16,21 @@ function App() {
             < Circle/>
 
             <div className="glass-page-wrapper">
+                {/* All navbar content */}
                 <NavBar/>
 
                 <div className="content-wrapper">
                     {/* React router nav pages */}
                     <Router>
-                            <Routes>
-                                <Route path='*' exact element={< NoPage />}/>
-                                <Route path="/" exact element={< Home />}/>
-                                <Route path="/home" element={< Home />}/>
-                                <Route path="/dev" element={< Dev />}/>
-                                <Route path="/SignIn" element={< SignInPage />}/>
-                                <Route path="/User" element={< User />}/>
-                            </Routes>
-                        </Router>
+                        <Routes>
+                            <Route path='*' exact element={< NoPage />}/>
+                            <Route path="/" exact element={< Home />}/>
+                            <Route path="/home" element={< Home />}/>
+                            <Route path="/dev" element={< Dev />}/>
+                            <Route path="/SignIn" element={< SignInPage />}/>
+                            <Route path="/User" element={< User />}/>
+                        </Routes>
+                    </Router>
                 </div>
             </div>
         </div>
