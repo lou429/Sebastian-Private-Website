@@ -1,12 +1,7 @@
-import './App.scss';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ReactRouter from './components/ReactRouter.js';
 import NavBar from './components/navbar.js'
-import Dev from "./components/dev.js";
-import Home from "./components/home.js";
-import SignInPage from './components/SignInPage.js';
-import User from "./components/UserPage.js";
-import NoPage from "./components/NoRouteFound.js"
 import Circle from "./components/Circle.js";
+import './App.scss';
 import './style.scss';
 
 function App() {
@@ -21,16 +16,7 @@ function App() {
 
                 <div className="content-wrapper">
                     {/* React router nav pages */}
-                    <Router>
-                        <Routes>
-                            <Route path='*' exact element={< NoPage />}/>
-                            <Route path="/" exact element={< Home />}/>
-                            <Route path="/home" element={< Home />}/>
-                            <Route path="/dev" element={< Dev />}/>
-                            <Route path="/SignIn" element={< SignInPage />}/>
-                            <Route path="/User" element={< User />}/>
-                        </Routes>
-                    </Router>
+                    <ReactRouter/>
                 </div>
             </div>
         </div>
