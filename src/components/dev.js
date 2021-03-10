@@ -4,7 +4,7 @@ import Card from './card';
 import ContentWrapper from './contentwrapper.js';
 import './dev.scss';
 
-function Development(props) {
+function Development() {
     const [repoList, setRepoList] = useState([]);
     const [repoCount, setRepoCount] = useState(0);
 

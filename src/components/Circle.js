@@ -7,43 +7,55 @@ function generateRandomNumber(start, end) {
 
 class ICircle {
     constructor(id) {
-        this.id = id;
+        this.id = 'circle-' + id;
         this.style = getRandomStyle(id);
     }
 }
 
 function getRandomStyle(id) {
     let style; 
-    let firstRand = generateRandomNumber(1, 15) + '%';
-    let secondRand = generateRandomNumber(1, 15) + '%';
+    let firstRand = generateRandomNumber(1, 50) + '%';
+    let secondRand = generateRandomNumber(1, 7) + '%';
+    
+    let hw = generateRandomNumber(10, 25) + 'rem';
 
     switch(generateRandomNumber(1, 4)) {
         case 1: 
             style = {
+                height: hw,
+                width: hw,
                 left: firstRand, 
                 top: secondRand
             }
             break;
         case 2: 
             style = {
+                height: hw,
+                width: hw,
                 right: firstRand, 
                 top: secondRand
             }
             break; 
         case 3: 
             style = {
+                height: hw,
+                width: hw,
                 left: firstRand, 
                 bottom: secondRand
             }
             break;
         case 4: 
             style = {
+                height: hw,
+                width: hw,
                 right: firstRand, 
                 bottom: secondRand
             }
             break;
         default: 
             style = {
+                height: hw,
+                width: hw,
                 left: firstRand, 
                 top: secondRand
             }
