@@ -10,6 +10,10 @@ class ICircle {
         this.id = 'circle-' + id;
         this.style = getRandomStyle();
     }
+
+    loadData() {
+        return localStorage.getItem("ICircleList");
+    }
 }
 
 function getRandomStyle() {
@@ -77,10 +81,11 @@ function newICircleRange(count) {
     let list = []
     for(let x = 0; x !== count; x++)
         list.push(new ICircle(x));
+    localStorage.setItem('ICircleList', JSON.stringify(list));
     return list; 
 }
 
-let CircleList = [];
+let CircleList =  new ICircle().loadData();
 
 function Circle(props) {
     return(
@@ -91,11 +96,7 @@ function Circle(props) {
 function GetAllCircles() {
     return(
         <div className="circle-container">
-            {
-            CircleList.length === 0 ?
-            newICircleRange(generateRandNum(2, 8)).map((circle, index) => (<Circle key={index} {...circle}/>)) : 
-            CircleList.map((circle, index) => (<Circle key={index} {...circle}/>)) 
-        }
+        {CircleList === null ? newICircleRange(generateRandNum(2, 8)).map((circle, index) => (<Circle key={index} {...circle}/>)) : CircleList.map((circle, index) => (<Circle key={index} {...circle}/>)) }
         </div>
     );
 }
