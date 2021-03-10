@@ -15,7 +15,7 @@ function App() {
                 <NavBar/>
 
                 <div className="content-wrapper">
-                    {/* React router nav pages */}
+                    {/* React router nav pages and all content that they will render */}
                     <ReactRouter/>
                 </div>
             </div>

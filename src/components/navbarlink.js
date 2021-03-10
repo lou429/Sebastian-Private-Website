@@ -1,6 +1,10 @@
 import React from 'react';
-import NavLink from './navlink.js';
 import './navbarlinks.scss';
+
+function NavLink(props) {
+    let objName = props.href === window.location.pathname ? 'nav-link-active' : 'nav-link';
+    return (<a className={objName} href={props.href}>{props.children}</a>);
+}
 
 function NavbarLink() {
     return (

@@ -1,67 +1,75 @@
 import React from 'react';
 import './Circle.scss';
 
-function generateRandomNumber(start, end) {
+function generateRandNum(start, end) {
     return Math.floor(Math.random() * end) + start;
 }
 
 class ICircle {
     constructor(id) {
         this.id = 'circle-' + id;
-        this.style = getRandomStyle(id);
+        this.style = getRandomStyle();
     }
 }
 
-function getRandomStyle(id) {
-    let style; 
-    let firstRand = generateRandomNumber(1, 50) + '%';
-    let secondRand = generateRandomNumber(1, 7) + '%';
+function getRandomStyle() {
+    let xRand = generateRandNum(1, 30) + '%';
+    let yRand = generateRandNum(1, 10) + '%';
+    let pos = generateRandNum(1, 4)    
+    let size = generateRandNum(5, 20) + 'rem';
     
-    let hw = generateRandomNumber(10, 25) + 'rem';
+    let animName = (pos <= 2 ? (xRand < yRand ? pos === 1 ? "circleLeft" : "circleRight" : "circleTop") : (pos === 3 ? "circleTop" : "circleBottom"));
 
-    switch(generateRandomNumber(1, 4)) {
-        case 1: 
+    let style; 
+
+    switch(pos) {
+        case 1: //Top left
             style = {
-                height: hw,
-                width: hw,
-                left: firstRand, 
-                top: secondRand
+                height: size,
+                width: size,
+                left: xRand, 
+                top: yRand,
+                animation_name: animName
             }
             break;
-        case 2: 
+        case 2: //Top Right
             style = {
-                height: hw,
-                width: hw,
-                right: firstRand, 
-                top: secondRand
+                height: size,
+                width: size,
+                right: xRand, 
+                top: yRand,
+                animation_name: animName
             }
             break; 
-        case 3: 
+        case 3: //Bottom left
             style = {
-                height: hw,
-                width: hw,
-                left: firstRand, 
-                bottom: secondRand
+                height: size,
+                width: size,
+                left: xRand, 
+                bottom: yRand,
+                animation_name: animName
             }
             break;
-        case 4: 
+        case 4: //Bottom right
             style = {
-                height: hw,
-                width: hw,
-                right: firstRand, 
-                bottom: secondRand
+                height: size,
+                width: size,
+                right: xRand, 
+                bottom: yRand,
+                animation_name: animName
             }
             break;
         default: 
             style = {
-                height: hw,
-                width: hw,
-                left: firstRand, 
-                top: secondRand
+                height: size,
+                width: size,
+                left: xRand, 
+                top: yRand,
+                animation_name: animName
             }
             break; 
     }
-    
+   
     return style; 
 }
 
@@ -73,7 +81,7 @@ function newICircleRange(count) {
 }
 
 let CircleList = [];
-CircleList = newICircleRange(generateRandomNumber(2, 8));
+CircleList = newICircleRange(generateRandNum(2, 8));
 
 
 function Circle(props) {

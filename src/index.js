@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import LoadPage from './scripts/page-scripts';
+// import reportWebVitals from './reportWebVitals';
 // import dotenv from 'dotenv';
 
 // const dotenv = require('dotenv');
@@ -24,6 +23,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals(console.log);
-console.log("Loading scripts...");
-LoadPage();
-console.log("Scripts loaded");

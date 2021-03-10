@@ -7,3 +7,21 @@
     padding: 1rem 5rem;
     align-items: center;
 }
+
+.nav-link, .nav-link-active {
+    color: $navlink-primary-color;
+    font-size: 30px;
+    margin: 20px 4px;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.2rem;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: $navlink-hover-color;
+}
+
+.nav-link-active { 
+    color: $navlink-hover-color;
+}
