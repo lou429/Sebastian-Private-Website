@@ -81,8 +81,6 @@ function newICircleRange(count) {
 }
 
 let CircleList = [];
-CircleList = newICircleRange(generateRandNum(2, 8));
-
 
 function Circle(props) {
     return(
@@ -93,7 +91,11 @@ function Circle(props) {
 function GetAllCircles() {
     return(
         <div className="circle-container">
-            {CircleList.map((circle, index) => (<Circle key={index} {...circle}/>))}
+            {
+            CircleList.length === 0 ?
+            newICircleRange(generateRandNum(2, 8)).map((circle, index) => (<Circle key={index} {...circle}/>)) : 
+            CircleList.map((circle, index) => (<Circle key={index} {...circle}/>)) 
+        }
         </div>
     );
 }
