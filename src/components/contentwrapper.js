@@ -3,7 +3,6 @@ import BodyHeading from './BodyHeading.js';
 import BodyContent from './BodyContent.js';
 import './contentwrapper.scss';
 
-
 // Content wrapper will store any component trying to modify the base content
 function ContentWrapper(props) {
     return (
