@@ -1,5 +1,6 @@
 import React from 'react';
-import BodyHeading from './BodyHeading.js'
+import BodyHeading from './BodyHeading.js';
+import BodyContent from './BodyContent.js';
 import './contentwrapper.scss';
 
 
@@ -8,9 +9,7 @@ function ContentWrapper(props) {
     return (
         <div className="content-container">
             <BodyHeading heading={props.heading}/>
-            <div className="content-body">
-                {props.children}
-            </div>
+            <BodyContent>{props.children}</BodyContent>
         </div>
     );
 }
