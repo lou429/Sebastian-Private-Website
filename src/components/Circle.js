@@ -30,14 +30,13 @@ function getRandomStyle() {
 
     let style; 
 
-    switch(pos) {
+    switch(4) { //pos
         case 1: //Top left
             style = {
                 height: size,
                 width: size,
                 left: xRand, 
-                top: yRand,
-                animation_name: animName
+                top: yRand
             }
             break;
         case 2: //Top Right
@@ -45,8 +44,7 @@ function getRandomStyle() {
                 height: size,
                 width: size,
                 right: xRand, 
-                top: yRand,
-                animation_name: animName
+                top: yRand
             }
             break; 
         case 3: //Bottom left
@@ -54,8 +52,7 @@ function getRandomStyle() {
                 height: size,
                 width: size,
                 left: xRand, 
-                bottom: yRand,
-                animation_name: animName
+                bottom: yRand
             }
             break;
         case 4: //Bottom right
@@ -63,17 +60,16 @@ function getRandomStyle() {
                 height: size,
                 width: size,
                 right: xRand, 
-                bottom: yRand,
-                animation_name: animName
+                bottom: yRand
             }
             break;
         default: 
             style = {
+                
                 height: size,
                 width: size,
                 left: xRand, 
-                top: yRand,
-                animation_name: animName
+                top: yRand
             }
             break; 
     }

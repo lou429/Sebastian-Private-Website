@@ -5,10 +5,10 @@
     border-radius: 50%;
     z-index: 3;
     filter: blur(2px);
-    animation-name: circleBottom;
-    animation-duration: 2s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+    // animation-name: circleBottom;
+    // animation-duration: 2s;
+    // animation-delay: 2s;
+    // animation-fill-mode: forwards;
     background: linear-gradient(
         to right bottom, 
           $circle-primary, 
@@ -21,38 +21,38 @@
       width: inherit;
     }
 
-    @keyframes circleTop {
-        0% {
-            top: -100px;
-        }
-        100% {
-            top: inherit;
-        }
-    }
+    // @keyframes circleTop {
+    //     0% {
+    //         top: -100px;
+    //     }
+    //     100% {
+    //         top: inherit;
+    //     }
+    // }
     
-    @keyframes circleBottom {
-        0% {
-            bottom: -100px;
-        }
-        100% {
-            bottom: inherit;
-        }
-    }
+    // @keyframes circleBottom {
+    //     0% {
+    //         bottom: -100px;
+    //     }
+    //     100% {
+    //         bottom: inherit;
+    //     }
+    // }
     
-    @keyframes circleRight {
-        0% {
-            right: -100px;
-        }
-        100% {
-            right: inherit;
-        }
-    }
+    // @keyframes circleRight {
+    //     0% {
+    //         right: -100px;
+    //     }
+    //     100% {
+    //         right: inherit;
+    //     }
+    // }
 
-    @keyframes circleLeft {
-        0% {
-            left: -100px;
-        }
-        100% {
-            left: inherit;
-        }
-    }
+    // @keyframes circleLeft {
+    //     0% {
+    //         left: -100px;
+    //     }
+    //     100% {
+    //         left: inherit;
+    //     }
+    // }
