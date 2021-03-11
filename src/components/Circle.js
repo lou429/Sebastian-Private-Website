@@ -16,7 +16,7 @@ class ICircle {
 }
 
 function loadLocalStorage(object) {
-    return JSON.parse(localStorage.getItem(object));
+    return JSON.parse(localStorage.getItem(object)) ?? newICircleRange(generateRandNum(1,8));
 }
 
 function saveLocalStorage(name, object) {
@@ -69,10 +69,10 @@ function getAnimationPosition(pos) {
 
 function loadLocalData() {
     var timeOfObj = loadLocalStorage('ICircleSetupTime');
-    if(timeOfObj >0 && (new Date().getTime() - timeOfObj > 5*60*1000)) 
-        return '';
+    if(timeOfObj > 0 && (new Date().getTime() - timeOfObj >= 5*60*1000)) 
+        return loadLocalStorage('ICircleList');
     else  
-        return new loadLocalStorage('ICircleList');
+        return newICircleRange(generateRandNum(1,8));
 }
 
 function newICircleRange(count) {

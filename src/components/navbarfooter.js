@@ -4,7 +4,6 @@ import './navbarfooter.scss';
 function NavbarFooter() {
     function navFooterOnClick() {
         localStorage.setItem('ICircleList', JSON.stringify(''));
-        alert("worked");
     }
     return(
         <div className="navbar-footer-container" onClick={navFooterOnClick}>
