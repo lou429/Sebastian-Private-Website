@@ -1,5 +1,6 @@
 import React from 'react';
 import './Circle.scss';
+import 'animate.css';
 
 function generateRandNum(start, end) {
     return Math.floor(Math.random() * end) + start;
@@ -7,8 +8,10 @@ function generateRandNum(start, end) {
 
 class ICircle {
     constructor(id) {
+        const pos = generateRandNum(1, 4);
         this.id = 'circle-' + id;
-        this.style = getRandomStyle();
+        this.style = getRandomStyle(pos);
+        this.className = getAnimationPosition(pos);
     }
 }
 
@@ -20,67 +23,54 @@ function saveLocalStorage(name, object) {
     localStorage.setItem(name, JSON.stringify(object));
 }
 
-function getRandomStyle() {
-    let xRand = generateRandNum(1, 30) + '%';
-    let yRand = generateRandNum(1, 10) + '%';
-    let pos = generateRandNum(1, 4)    
+function getRandomStyle(pos) {
+    let xRand = generateRandNum(1, 49) + '%';
+    let yRand = generateRandNum(1, 7) + '%';
     let size = generateRandNum(5, 20) + 'rem';
-    
-    let animName = (pos <= 2 ? (xRand < yRand ? pos === 1 ? "circleLeft" : "circleRight" : "circleTop") : (pos === 3 ? "circleTop" : "circleBottom"));
 
-    let style; 
-
-    switch(4) { //pos
+    switch(pos) { //pos
         case 1: //Top left
-            style = {
+            return {
                 height: size,
                 width: size,
                 left: xRand, 
                 top: yRand
             }
-            break;
         case 2: //Top Right
-            style = {
+            return  {
                 height: size,
                 width: size,
                 right: xRand, 
                 top: yRand
             }
-            break; 
         case 3: //Bottom left
-            style = {
+            return {
                 height: size,
                 width: size,
                 left: xRand, 
                 bottom: yRand
             }
-            break;
         case 4: //Bottom right
-            style = {
+            return {
                 height: size,
                 width: size,
                 right: xRand, 
                 bottom: yRand
             }
-            break;
         default: 
-            style = {
-                
-                height: size,
-                width: size,
-                left: xRand, 
-                top: yRand
-            }
-            break; 
+            return null;
     }
-   
-    return style; 
+}
+
+function getAnimationPosition(pos) {
+    let str = 'animate__fadeIn' + (pos > 2 ? 'Up' : 'Down') + 'Big';
+    return 'animate__animated ' + str + ' animate__slower';
 }
 
 function loadLocalData() {
     var timeOfObj = loadLocalStorage('ICircleSetupTime');
     if(timeOfObj >0 && (new Date().getTime() - timeOfObj > 5*60*1000)) 
-        return null;
+        return '';
     else  
         return new loadLocalStorage('ICircleList');
 }
@@ -95,17 +85,18 @@ function newICircleRange(count) {
 }
 
 let CircleList =  loadLocalData();
+// let CircleList = null;
 
 function Circle(props) {
     return(
-        <div id={props.id} className="circle" style={props.style}/>
+        <div id={props.id} className={props.className} style={props.style}/>
     );
 }
 
 function GetAllCircles() {
     return(
         <div className="circle-container">
-            {CircleList === null ? newICircleRange(generateRandNum(2, 8)).map((circle, index) => (<Circle key={index} {...circle}/>)) : CircleList.map((circle, index) => (<Circle key={index} {...circle}/>)) }
+            {CircleList === null || CircleList === '' ? newICircleRange(generateRandNum(2, 8)).map((circle, index) => (<Circle key={index} {...circle}/>)) : CircleList.map((circle, index) => (<Circle key={index} {...circle}/>)) }
         </div>
     );
 }

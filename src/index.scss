@@ -36,3 +36,8 @@ $border: 4px;
 $linear-gradient-full: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
 $linear-gradient-background-size: 1600% 1600%;
 $linear-anim-type: gradient-anim $time ease infinite;
+
+:root {
+    --animate-delay: 2s;
+    --animate-duration: 1s;
+}
