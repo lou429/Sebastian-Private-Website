@@ -12,7 +12,7 @@ class ICircle {
     }
 
     loadData() {
-        return localStorage.getItem("ICircleList");
+        return JSON.parse(localStorage.getItem("ICircleList"));
     }
 }
 
@@ -85,7 +85,7 @@ function newICircleRange(count) {
     return list; 
 }
 
-let CircleList =  new ICircle().loadData();
+let CircleList =  new ICircle(0).loadData();
 
 function Circle(props) {
     return(
