@@ -25,7 +25,7 @@ function saveLocalStorage(name, object) {
 
 function getRandomStyle(pos) {
     let xRand = generateRandNum(1, 49) + '%';
-    let yRand = generateRandNum(1, 7) + '%';
+    let yRand = generateRandNum(1, 14) + '%';
     let size = generateRandNum(5, 20) + 'rem';
 
     switch(pos) { //pos
