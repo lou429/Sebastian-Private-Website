@@ -3,6 +3,9 @@ import './navbarfooter.scss';
 import 'animate.css';
 import $ from 'jquery';
 
+let loadObject = (objName) => JSON.parse(localStorage.getItem(objName));
+let saveObject = (objName, object) => localStorage.setItem(objName, JSON.stringify(object));
+
 
 function NavbarFooter() {
     const [bannerText, setBannerText] = useState('');
@@ -14,8 +17,22 @@ function NavbarFooter() {
                 .then(response => response.json())
                 .then(data => receiveCallback(data.text))
         }
-        
         getData();
+
+        //Callback for when data is received, the method also changes the animation of an object
+        function receiveCallback(data) {
+            if(data.length > 80)
+                getData();
+            else {
+                saveObject('randomFact', data); //Save last received result to have it load on page refresh
+                $('#footerText').removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight').addClass('animate__delay-0s');
+            
+                setTimeout(() => {
+                    $('#footerText').removeClass('animate__fadeOutRight').addClass('animate__fadeInLeft');
+                    setBannerText(data);
+                }, 1200);
+            }
+        }
     }, [changeBanner]);
 
     //Use effect to wait a certain amount of time before loading new data
@@ -25,23 +42,13 @@ function NavbarFooter() {
         }, 5000);
     }, [bannerText, changeBanner]);
 
-    //Callback for when data is received, the method also changes the animation of an object
-    function receiveCallback(data) {
-        $('#footerText').removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight').addClass('animate__delay-0s');
-        setTimeout(() => {
-            $('#footerText').removeClass('animate__fadeOutRight').addClass('animate__fadeInLeft');
-            setBannerText(data);
-        }, 1200);
-
-    }
-
-    function navFooterOnClick() {
-        localStorage.setItem('ICircleList', JSON.stringify(''));
+    function loadNewResult() {
+        setChangeBanner(!changeBanner);
     }
 
     return(
-        <div className="navbar-footer-container" onClick={navFooterOnClick}>
-            <h1 id='footerText' className='animate__animated animate__fadeInLeft animate_slower animation__delay 1.5s'>{bannerText}</h1>
+        <div className="navbar-footer-container" onClick={loadNewResult}>
+            <h1 id='footerText' className='animate__animated animate__fadeInLeft animate_slower animation__delay 1.5s'>{bannerText ? bannerText : loadObject('randomFact')}</h1>
         </div>
     );
 }
