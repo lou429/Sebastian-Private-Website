@@ -19,14 +19,14 @@ function NavbarFooter() {
                 .then(data => receiveCallback(data.text))
         }
 
-        if(loadObject('randomFact').length > 1)
+        if(loadObject('randomFact') === null)
+            getData();
+        else 
         {
             setTimeout(() => {
                 getData();
             }, defaultWaitTime);
         }
-        else 
-            getData();
 
         //Callback for when data is received, the method also changes the animation of an object
         function receiveCallback(data) {
