@@ -50,6 +50,12 @@ typings/
 #Enviroment variables
 .env
 
+#Trello link
+Trello.url
+
+#Private code 
+private.txt
+
 # Optional npm cache directory
 .npm
 

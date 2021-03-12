@@ -1,0 +1,43 @@
+$background-color-primary: rgb(235, 235, 235);
+$background-color-secondary: #ffffff;
+
+$circle-primary: rgba(255,255,255,0.9);
+$circle-secondary: rgba(255,255,255,0.1);
+
+$navlink-primary-color: #658ec6;
+$navlink-hover-color: #00fdff;
+
+$linear-gradient-first: #ff0000;
+$linear-gradient-second: #FF8a00;
+$linear-gradient-third: #ffee00;
+$linear-gradient-fourth: #18ff00;
+$linear-gradient-fifth: #00fdff;
+$linear-gradient-sixth: #0032ff;
+$linear-gradient-seventh: #fd00ff;
+$linear-gradient-eighth: #ff0000;
+
+
+
+$content-outline-background: 2px solid orange; 
+
+$time: 11s;
+
+$nav-color-main: #222; 
+$nav-color-secondary: rgb(47,47,47); 
+
+$card-color-primary: #1b1b1b;
+$card-color-secondary: #303030;
+$card-border: 2px solid #000000;
+
+$primary-text-color: black; 
+
+$border: 4px;
+
+$linear-gradient-full: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);
+$linear-gradient-background-size: 1600% 1600%;
+$linear-anim-type: gradient-anim $time ease infinite;
+
+:root {
+    --animate-delay: 300ms;
+    --animate-duration: 1s;
+}

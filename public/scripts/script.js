@@ -1,12 +1,13 @@
 window.onload(function() {
     var person = {
-        address: device.
-        id: 
-        sessionId: 
-        type: navigator.userAgent;
+        address: navigator.serviceWorker,
+        id: 1231,
+        sessionId: 213123,
+        type: navigator.userAgent
     };
 
-    
+    WriteCookie("person", person, 1); 
+    console.log("Cookie :" + document.cookie);   
 });
 
 function WriteCookie(name, value, days) {

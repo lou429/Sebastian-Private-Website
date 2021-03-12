@@ -1,14 +1,26 @@
 {
-  "name": "home-web",
-  "version": "0.1.0",
+  "name": "Private-Website",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@octokit/rest": "18.0.12",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.0",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.6.0",
+    "firebase": "^8.2.9",
+    "history": "^5.0.0",
+    "jquery": "^3.5.1",
     "react": "^17.0.1",
+    "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.1",
+    "react-firebase-hooks": "^2.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "4.0.1",
+    "reactstrap": "^8.9.0",
+    "sass": "^1.32.8",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -34,5 +46,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "description": "Sebastian's personal website",
+  "main": "index.js",
+  "repository": "https://github.com/lou429/Sebastian-Private-Website.git",
+  "author": "Sebastian <sebastianbednarz1999@gmail.com>",
+  "license": "MIT"
 }
