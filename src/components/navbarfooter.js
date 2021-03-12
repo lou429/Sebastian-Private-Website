@@ -34,10 +34,10 @@ function NavbarFooter() {
                 getData();
             else {
                 saveObject('randomFact', data); //Save last received result to have it load on page refresh
-                $('#footerText').removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight').addClass('animate__delay-0s');
+                $('#footerText').removeClass('animate__slideInLeft').addClass('animate__slideOutRight').addClass('animate__delay-0s');
             
                 setTimeout(() => {
-                    $('#footerText').removeClass('animate__fadeOutRight').addClass('animate__fadeInLeft');
+                    $('#footerText').removeClass('animate__slideOutRight').addClass('animate__slideInLeft');
                     setBannerText(data);
                 }, 1200);
             }
