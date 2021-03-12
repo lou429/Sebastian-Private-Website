@@ -2,15 +2,11 @@ import React, {useState, useEffect} from 'react';
 import './navbarfooter.scss';
 import 'animate.css';
 import $ from 'jquery';
-import {Octokit} from "@octokit/rest";
 
 
 function NavbarFooter() {
     const [bannerText, setBannerText] = useState('');
     const [changeBanner, setChangeBanner] = useState(false);
-    const bannerTextArray = ['Hi there', 'How are you?', 'Have a nice day'];
-
-    const apiKey = 'https://uselessfacts.jsph.pl/random.json?language=en';
 
     useEffect(function loadBanner() {
         async function getData() {
@@ -30,11 +26,12 @@ function NavbarFooter() {
     }, [bannerText, changeBanner]);
 
     function receiveCallback(data) {
-        $('#footerText').className = 'animate__animated animate__fadeOutRight';
-
+        $('#footerText').removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight');
         setTimeout(() => {
+            $('#footerText').removeClass('animate__fadeOutRight').addClass('animate__fadeInLeft');
             setBannerText(data);
-        }, 1200)
+        }, 1200);
+
     }
 
     function navFooterOnClick() {
@@ -43,7 +40,7 @@ function NavbarFooter() {
 
     return(
         <div className="navbar-footer-container" onClick={navFooterOnClick}>
-            <h1 id='footerText' className='animate__animated animate__fadeInLeft animate_slower'>{bannerText}</h1>
+            <h1 id='footerText' className='animate__animated animate__fadeInLeft animate_slower animation__delay 1.5s'>{bannerText}</h1>
         </div>
     );
 }
