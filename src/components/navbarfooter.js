@@ -5,19 +5,28 @@ import $ from 'jquery';
 
 let loadObject = (objName) => JSON.parse(localStorage.getItem(objName));
 let saveObject = (objName, object) => localStorage.setItem(objName, JSON.stringify(object));
-
+let defaultWaitTime = 5000;
 
 function NavbarFooter() {
     const [bannerText, setBannerText] = useState('');
     const [changeBanner, setChangeBanner] = useState(false);
 
     useEffect(function loadBanner() {
+        //Method to run API call
         async function getData() {
             await fetch('https://uselessfacts.jsph.pl/random.json?language=en')
                 .then(response => response.json())
                 .then(data => receiveCallback(data.text))
         }
-        getData();
+
+        if(loadObject('randomFact').length > 1)
+        {
+            setTimeout(() => {
+                getData();
+            }, defaultWaitTime);
+        }
+        else 
+            getData();
 
         //Callback for when data is received, the method also changes the animation of an object
         function receiveCallback(data) {
@@ -39,7 +48,7 @@ function NavbarFooter() {
     useEffect(function bannerChange() {
         setTimeout(() => {
             setChangeBanner(!changeBanner);
-        }, 5000);
+        }, defaultWaitTime);
     }, [bannerText, changeBanner]);
 
     function loadNewResult() {
