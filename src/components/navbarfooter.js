@@ -25,8 +25,9 @@ function NavbarFooter() {
         }, 5000);
     }, [bannerText, changeBanner]);
 
+    //Callback for when data is received, the method also changes the animation of an object
     function receiveCallback(data) {
-        $('#footerText').removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight');
+        $('#footerText').removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight').addClass('animate__delay-0s');
         setTimeout(() => {
             $('#footerText').removeClass('animate__fadeOutRight').addClass('animate__fadeInLeft');
             setBannerText(data);
