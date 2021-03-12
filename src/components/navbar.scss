@@ -1,73 +1,25 @@
-@import "src/index";
-
-.navbar {
-    width: 100%;
+.nav-wrapper {
+    // flex: 1;
     display: flex;
-    background-color: $nav-color-main;
-    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     text-align: center;
-    border: 3px solid $nav-color-secondary;
-    text-align: center;    
-    justify-content: center;
-}
-
-.nav-content-container {
-    display: inline-block;
-    justify-content: center;
-}
-
-.content-end {
-    margin-left: 1rem;
-    margin-right: 20px;
-    right: 0px;
-    justify-content: end;
-}
-
-.nav-link-body { 
-    padding: 20px 20px 0px 20px;
-}
-
-.nav-link-body a {
-    text-decoration: none;
-    transition: .2s;
-}
-
-.content-end-container {
-    padding: 1px; 
-    // background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
-    background-size: 40px;
-    // transform: scale(10px,10px);z
-}
-
-.nav-link-src:hover {
-    text-decoration: underline;
-    text-decoration-color: inherit;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 1px;
-}
-
-.content-end-container a {
-    height: 40px;
-    width: 40px;
-    padding: 4px;
-    // 
-}
-
-#github-profile {
-    // background: linear-gradient(90deg, $linear-gradient-primary, $linear-gradient-secondary);
-    padding: 4px;
-    // border: solid $border transparent;
-}
-
-#github-profile:hover {
-    animation: Profile-Animation 2s ease;
-}
-
-@keyframes Profile-Animation {
-    to {
-        transform: rotateZ(0deg);
-    }
-    from {
-        transform: rotateZ(360deg);
-    }
-}
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 2rem;
+    padding: 0px 20px;
+    min-width: 20rem;
+    max-width: 20rem;
+  }
+  
+  .nav-footer {
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    border-radius: 2rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+  }

@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react';
 import {Octokit} from "@octokit/rest";
-import $ from 'jquery';
 import Card from './card';
+import ContentWrapper from './contentwrapper.js';
 import './dev.scss';
 
-function Development(props) {
+function Development() {
     const [repoList, setRepoList] = useState([]);
     const [repoCount, setRepoCount] = useState(0);
 
@@ -30,7 +30,7 @@ function Development(props) {
     }, [])
 
     return (
-        <div className="container">
+        <ContentWrapper heading="Dev page">
             <div className="row">
                 <h1>Github account</h1>
             </div>
@@ -43,7 +43,7 @@ function Development(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </ContentWrapper>
     );
 }
 

@@ -7,6 +7,7 @@
     "appService.deploySubpath": ".",
     "cSpell.words": [
         "Repos",
+        "contentwrapper",
         "octokit"
     ],
     "emmet.includeLanguages": {

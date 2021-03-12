@@ -1,0 +1,22 @@
+@import "src/index";
+
+#github-profile {
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    padding: 4px;
+    border: solid $border transparent;
+    margin: 10px 0px;
+    border-radius: 20rem;
+}
+
+#github-profile:hover {
+    animation: Profile-Animation 2s ease;
+}
+
+@keyframes Profile-Animation {
+    to {
+        transform: rotateZ(0deg);
+    }
+    from {
+        transform: rotateZ(360deg);
+    }
+}
