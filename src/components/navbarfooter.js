@@ -5,7 +5,7 @@ import $ from 'jquery';
 
 let loadObject = (objName) => JSON.parse(localStorage.getItem(objName));
 let saveObject = (objName, object) => localStorage.setItem(objName, JSON.stringify(object));
-let defaultWaitTime = 5000;
+let defaultWaitTime = 30000;
 
 function NavbarFooter() {
     const [bannerText, setBannerText] = useState('');
