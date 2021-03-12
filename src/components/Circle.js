@@ -66,7 +66,7 @@ class ICircle {
 // Load circles saved in local storage 
 function loadLocalData() {
     var timeOfObj = loadObject('ICircleSetupTime');
-    if(timeOfObj > 0 && (new Date().getTime() - timeOfObj >= 5*60*1000)) 
+    if(timeOfObj > 0 && (new Date().getTime() - timeOfObj >= 1*60*1000)) 
         return loadObject('ICircleList');
     else  
         return newICircleRange(generateRandNum(1,8)); 
@@ -80,8 +80,7 @@ function newICircleRange(count) {
     let tempList = []
     for(let x = 0; x !== count; x++)
         tempList.push(new ICircle(x, false));
-    list = tempList;
-    saveObject('ICircleList', list);
+    saveObject('ICircleList', tempList);
     saveObject('ICircleSetupTime', new Date().getTime());
     return list; 
 }
