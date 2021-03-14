@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './navbarfooter.scss';
 import 'animate.css';
 import $ from 'jquery';
-import Tooltip from './tooltip';
+import Tooltip from './tooltip'
 
 let loadObject = (objName) => JSON.parse(localStorage.getItem(objName));
 let saveObject = (objName, object) => localStorage.setItem(objName, JSON.stringify(object));
@@ -57,11 +57,11 @@ function NavbarFooter() {
     }
 
     return(
-        <div className="navbar-footer-container" onClick={loadNewResult}>
-            <Tooltip text="test">
-            <h1 id='footerText' className='animate__animated animate__fadeInLeft animate_slower animation__delay 1.5s'>{bannerText ? bannerText : loadObject('randomFact')}</h1>
-            </Tooltip>
-        </div>
+        <Tooltip text="This is a random fact, these update every 30 seconds">
+            <div className="navbar-footer-container" onClick={loadNewResult}>
+                <h1 id='footerText' className='animate__animated animate__fadeInLeft animate_slower animation__delay 1.5s'>{bannerText ? bannerText : loadObject('randomFact')}</h1>
+            </div>
+        </Tooltip>
     );
 }
 
