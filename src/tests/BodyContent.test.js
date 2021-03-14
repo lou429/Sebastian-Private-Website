@@ -15,3 +15,13 @@ test('Body content can be rendered', () => {
     expect(getByText(text)).toBeInTheDocument();
     expect(container).toMatchSnapshot();
 });
+
+test('Body content snapshot', () => {
+    const { container } = render(
+        <BodyComponent>
+            <p/>
+        </BodyComponent>
+    );
+    
+    expect(container).toMatchSnapshot();
+});

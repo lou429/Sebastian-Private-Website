@@ -11,3 +11,13 @@ exports[`Body content can be rendered 1`] = `
   </div>
 </div>
 `;
+
+exports[`Body content snapshot 1`] = `
+<div>
+  <div
+    class="content-body"
+  >
+    <p />
+  </div>
+</div>
+`;

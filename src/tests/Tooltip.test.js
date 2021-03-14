@@ -2,7 +2,7 @@ import {render} from '@testing-library/react';
 import Tooltip from '../components/tooltip';
 
 test('Tooltip snapshot test', () => {
-    const { container, getByText } = render(
+    const { container } = render(
         <Tooltip text="Test render">
             <h1>Heading</h1>
         </Tooltip>
@@ -14,7 +14,7 @@ test('Tooltip snapshot test', () => {
 test('Can tooltips render', () => {
     let text = "Tooltip test";
 
-    const { container, getByText } = render(
+    const { getByText } = render(
         <Tooltip text={text}>
             <h1>Heading</h1>
         </Tooltip>
