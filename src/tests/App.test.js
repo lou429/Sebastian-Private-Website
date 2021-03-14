@@ -5,8 +5,3 @@ test('Render full app', () => {
   const { getByText } = render(<App/>);
   expect(getByText('Home')).toBeInTheDocument();
 });
-
-test('App snapshot', () => {
-  const {container} = render(<App/>);
-  expect(container).toMatchSnapshot();
-})

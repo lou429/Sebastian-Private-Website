@@ -22,26 +22,3 @@ exports[`Content wrapper snapshot 1`] = `
   </div>
 </div>
 `;
-
-exports[`Does content wrapper render 1`] = `
-<div>
-  <div
-    class="content-container"
-  >
-    <div
-      class="content-heading"
-    >
-      <h1>
-        render test heading
-      </h1>
-    </div>
-    <div
-      class="content-body"
-    >
-      <p>
-        render test content
-      </p>
-    </div>
-  </div>
-</div>
-`;
