@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip snapshot test 1`] = `
+<div>
+  <div
+    class="tooltip"
+  >
+    <h1>
+      Heading
+    </h1>
+    <span
+      class="toolTipText"
+    >
+      Test render
+    </span>
+  </div>
+</div>
+`;
