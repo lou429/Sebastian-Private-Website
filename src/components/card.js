@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
   /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -5,7 +6,7 @@ import React, {useState, useEffect} from 'react';
 import './card.scss';
 import {Octokit} from "@octokit/rest";
 import $ from 'jquery';
-import Tooltip from './tooltip.js';
+import CardTags from './CardTags.js';
 import dotenv from 'dotenv';
 
 class GithubTag {
@@ -48,10 +49,12 @@ function Card(props) {
 
     function receivedCallback(data) {
         let result = []
+        //This function uses reflection to return language type as a variable
         Object.entries(data).map((tag, index) => {
             if(index < 3) //Limit to 3 results
                 result.push(new GithubTag(tag))
-        })
+        });
+
         return result; 
     }
 
@@ -85,7 +88,7 @@ function Card(props) {
                 </div>
             </div>
             <div className="dev-card-tags">
-                {tagList.map((tag, index) => (<Tooltip key={props.id + ' ' + index.toString()} text={tag.count}><a className="dev-card-tag">{tag.language}</a></Tooltip>))}
+                 {tagList.map((tag, index) => (<CardTags key={props.id + ' ' + index.toString()} {...tag}/>))}
             </div>
         </div>
     );
