@@ -39,8 +39,9 @@ function Development() {
                 setRepoList([new GithubRepos()]);
             });
         }
+        
         getData(); 
-    }, [])
+    }, [repoCount])
 
     function receivedCallback(data) {
         let localList = [];
@@ -57,10 +58,10 @@ function Development() {
                 <h1>Github repositories</h1>
             </div> */}
             <div className="row">
-                <h1>Repos: <a id="repoCount" alt="Repo count" href="https://github.com/lou429?tab=repositories" target="_blank" rel="noopener noreferrer">{repoCount}</a></h1>
+                {/* <h1>Repos: <a id="repoCount" alt="Repo count" href="https://github.com/lou429?tab=repositories" target="_blank" rel="noopener noreferrer">{repoCount}</a></h1> */}
                 <div className="dev-card-list-container">
                     <div className="dev-card-list">
-                        {repoList !== [new GithubRepos()] ? repoList.map(repo => (repo !== undefined ? <Card key={repo.id} {...repo} /> : '')) : ''}
+                        {repoList && repoList !== [new GithubRepos()] ? repoList.map(repo => (repo !== undefined ? <Card key={repo.id} {...repo} /> : '')) : ''}
                     </div>
                 </div>
             </div>

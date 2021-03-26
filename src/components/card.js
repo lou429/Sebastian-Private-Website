@@ -1,7 +1,7 @@
-/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-  /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useEffect} from 'react';
 import './card.scss';
 import {Octokit} from "@octokit/rest";
@@ -19,13 +19,14 @@ class GithubTag {
 function Card(props) {
     const [tagList, setTagList] = useState([]);
 
-    $(document).ready(function () {
-        $('.dev-card-avatar-image').each(function () {
-            if ($(this).attr('src') === 'undefined.png') 
-                $(this).attr('class', 'dev-card-avatar-image-no-image');
-            }
-        );
-    })
+    //Function to check for invalid images - replace
+    // $(document).ready(function () {
+    //     $('.dev-card-avatar-image').each(function () {
+    //         if ($(this).attr('src') === 'undefined.png') 
+    //             $(this).attr('class', 'dev-card-avatar-image-no-image');
+    //         }
+    //     );
+    // })
 
     //Use effect hook to load tag info from Github
     useEffect(function loadTagInfo() {
@@ -60,6 +61,7 @@ function Card(props) {
 
     return (
         <div id={props.id} className='dev-card'>
+            {/* Github repo name and date */}
             <div className="dev-card-header">
                 <p>{props.date || "01-01-2000"}</p>
                 <a href={props.projectUrl} alt="Project url" target="_blank" rel="noopener noreferrer">
@@ -69,12 +71,14 @@ function Card(props) {
                 </a>
             </div>
 
+            {/* Full description of the github repo */}
             <div className="dev-card-description">
                 <div className="dev-card-description-body">
                     <p>{props.description || ""}</p>
                 </div>
             </div>
 
+            
             <div className="dev-card-body">
                 <a className="dev-card-avatar-link" href={props.creatorUrl} target="_blank" rel="noopener noreferrer">
                     <img className="dev-card-avatar-image" src={props.creatorUrl + ".png"} alt="Author avatar"/>

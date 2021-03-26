@@ -39,7 +39,7 @@
     width: 60px;
     height: 48px;
     fill: none; 
-    stroke: #ff8a00;
+    stroke: $card-profile-stroke;
     stroke-width: 8;
     stroke-linecap: round;
     pointer-events: none;
@@ -55,7 +55,7 @@
     color: #7a7a8c;
 }
 
-.dev-card-header h2 {
+.card-profile {
     font-size: 20px;
     margin: .25rem 0 auto;
     text-decoration: none;
@@ -65,42 +65,22 @@
     cursor: pointer;
 }
 
-.dev-card-header h2:hover{
-    background: $linear-gradient-full;
-    background-size: $linear-gradient-background-size;
-    -webkit-animation: $linear-anim-type;
-    -moz-animation: $linear-anim-type;
-    animation: $linear-anim-type;
-    text-shadow: none;
-    background-clip: text;
-    -webkit-backdrop-clip: text;
-    -webkit-text-fill-color: transparent;
+.card-profile:hover{
     cursor: default;
 }
 
 .dev-card-body a:hover{
-    background: $linear-gradient-full;
-    background-size: $linear-gradient-background-size;
-    -webkit-animation: $linear-anim-type;
-    -moz-animation: $linear-anim-type;
-    animation: $linear-anim-type;
-    background-clip: text;
-    -webkit-backdrop-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
     cursor: auto;
 }
 
 .dev-card-author-name a:link {
+    color: inherit;
     text-decoration: none;
-    color: inherit;
     cursor: pointer;
-}
-
-.dev-card-author-name a:visited {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
+    .dev-card-author-name a:visited {
+        color: inherit;
+        cursor: auto;
+    }
 }
 
 .dev-card-avatar-link {
@@ -137,10 +117,11 @@
 
 .dev-card-tags {
     margin: .2rem 0 2rem;
-    padding: .5rem 0 1rem;
+    // padding: .5rem 0 1rem;
+    border-bottom: 10px;
     line-height: 2;
     margin-bottom: 0;
-    display: inline-block;
+    display: flex;
     grid-area: auto;
     text-align: center;
 }
@@ -164,15 +145,15 @@
 }
 
 .dev-card-tags a:hover {
-    background: $linear-gradient-full;
-    background-size: $linear-gradient-background-size;
-    -webkit-animation: $linear-anim-type;
-    -moz-animation: $linear-anim-type;
-    animation: $linear-anim-type;
-    text-shadow: none;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-box-decoration-break: clone;
+    // background: $linear-gradient-full;
+    // background-size: $linear-gradient-background-size;
+    // -webkit-animation: $linear-anim-type;
+    // -moz-animation: $linear-anim-type;
+    // animation: $linear-anim-type;
+    // text-shadow: none;
+    // -webkit-text-fill-color: transparent;
+    // -webkit-background-clip: text;
+    // -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     background-clip: text;
     border-color: white;
@@ -205,13 +186,7 @@
     background: linear-gradient(90deg, $card-color-primary, $card-color-primary, 1px, $card-color-secondary, 0, $card-color-secondary);
 }
 
-.dev-card-header a:link {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: pointer;
-}
-
-.dev-card-header a:visited {
+.dev-card-header a:link, .dev-card-header a:visited{
     text-decoration: inherit;
     color: inherit;
     cursor: pointer;
@@ -228,6 +203,10 @@
 .dev-card-description p {
     margin-block-start: 0em;
     margin-block-end: 0em;
+}
+
+.card-profile, .dev-card-tags:hover, #authorName:hover {
+    color: linear-gradient(to right top, cyan, blue);
 }
 
 .tooltip {
