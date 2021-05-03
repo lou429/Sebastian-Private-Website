@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.nav-wrapper, .glass-page-wrapper {
+  border:  $content-wrapper-color-border;
+}
+
 .glass-page-wrapper {
   background: white;
   min-height: 80vh;

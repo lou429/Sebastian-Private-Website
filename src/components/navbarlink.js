@@ -11,6 +11,7 @@ function NavbarLink() {
         <div className="nav-body-container">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/dev">Dev page</NavLink>
+            <NavLink href="/changelog">Change log</NavLink>
             <NavLink href="/user">About me</NavLink>
             <NavLink href="/contact">Contact me</NavLink>
         </div>
