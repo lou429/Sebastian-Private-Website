@@ -1,0 +1,26 @@
+@import "src/index";
+
+.page-container {
+    height: 100%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    color: white; 
+    div {
+        display: inline-block;
+        position: relative;
+        display: flex;
+        bottom: 0px;
+        padding: 20px;
+        h6 {
+            font-size: 36px;
+        }
+    }
+}
+
+.content-body {
+    height: 90%;
+}

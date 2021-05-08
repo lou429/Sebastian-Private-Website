@@ -16,6 +16,7 @@ function Home() {
             <h6>
                 If you encounter any bugs please send a message on the contact page alongside with what you were doing that caused 
             </h6>
+            <img id="profile-picture" src="../../public/Resources/images/profile-picture.jpg" alt="Profile"/>
         </ContentWrapper>
     );
 }

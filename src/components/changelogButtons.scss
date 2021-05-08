@@ -1,0 +1,13 @@
+@import "src/index";
+
+.changelog-navigation {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    color: white; 
+    width: 40px;
+    cursor: pointer;
+    h6 {
+        border: 1px solid black;
+    }
+}
