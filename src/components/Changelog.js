@@ -25,17 +25,17 @@ function Changelog() {
                 <div className="changelog-content-wrapper"> 
                     <div className="change-log-ver-col">
                         <ChangelogVersion/>
+                        <div className="button-container">
+                            <DirectionButton direction="Left"/>
+                            <h6>{currentPage} / {getPageCount()}</h6>
+                            <DirectionButton direction="Right"/>
+                        </div>
                     </div>
                     <div className="change-log-info-col"> 
                         <ReactMarkdown children={getChangeLog(currentPage)}/>
                     </div>
                 </div>
             </ContentWrapper>
-            <div className="button-container">
-                <DirectionButton direction="Left"/>
-                <h6>{currentPage} / {getPageCount()}</h6>
-                <DirectionButton direction="Right"/>
-            </div>
         </div>
     );
 }

@@ -27,16 +27,23 @@
 
 .changelog-content-wrapper {
     display: flex-box;
+    height: 100%;
     div {
         border: 1px solid black;
+        float: left; 
+        padding: 10px;
+        height: 100%;
+        overflow: hidden;
+        flex-wrap: wrap;
     }
 }
 
 .change-log-ver-col {
-    width: 50%;
+    width: 30%;
+    font-size: large;
 }
 
 .change-log-info-col {
-    right: 50%;
-    width: 50%;
+    width: 70%;
+    font-size: medium;
 }
