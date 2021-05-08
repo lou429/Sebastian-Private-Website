@@ -7,8 +7,8 @@ function MarkDownButton(props) {
     }
 
     return(
-        <div className={'changelog-navigation ' + props.direction} onClick={() => Navigate(props.direction)}>
-            <h6>{props.direction === "Left" ? "<" : ">"}</h6>
+        <div className={'changelog-navigation ' + props.direction}>
+            <h6 onClick={() => Navigate(props.direction)}>{props.direction === "Left" ? "<" : ">"}</h6>
         </div>
     );
 }

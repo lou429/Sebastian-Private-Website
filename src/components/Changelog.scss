@@ -24,3 +24,19 @@
 .content-body {
     height: 90%;
 }
+
+.changelog-content-wrapper {
+    display: flex-box;
+    div {
+        border: 1px solid black;
+    }
+}
+
+.change-log-ver-col {
+    width: 50%;
+}
+
+.change-log-info-col {
+    right: 50%;
+    width: 50%;
+}
