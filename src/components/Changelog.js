@@ -1,7 +1,6 @@
 import React, {useState, useEffect, version} from 'react'; 
 import ReactMarkdown from 'react-markdown';
 import ContentWrapper from './contentwrapper';
-import DirectionButton from './changelogButtons';
 import ChangelogVersion from './Changelog-Version';
 import './Changelog.scss';
 // import firebaseAdmin from 'firebase-admin';
