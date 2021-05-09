@@ -34,6 +34,11 @@ $card-border: 2px solid #000000;
 
 $primary-text-color: black; 
 
+$version-number-background-primary: rgb(223, 223, 223);
+$version-number-text-primary: rgb(0, 0, 0);
+$version-number-background-secondary: black;
+$version-number-text-secondary: black;
+
 $border: 4px;
 
 $linear-gradient-full: linear-gradient(270deg, $linear-gradient-first, $linear-gradient-second, $linear-gradient-third, $linear-gradient-fourth, $linear-gradient-fifth, $linear-gradient-sixth, $linear-gradient-seventh, $linear-gradient-eighth);

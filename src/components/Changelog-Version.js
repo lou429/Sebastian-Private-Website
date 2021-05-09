@@ -1,14 +1,25 @@
 import react from 'react';
+import './Changelog-Version.scss'
 
-function ChangelogVersion() {
+function ChangelogVersion(props) {
     return(
-        <div className="changelog-version-wrapper">
-            <td>
-                <tr>
-                    jkuiasfkjghasKJFGKAJUSFGB
-                </tr>
-            </td>
-        </div>
+        <table className="changelog-version-wrapper">
+            <tr>
+                <th>
+                    Version number
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    num 1
+                </td>
+                {props.data.forEach((verNum) => {
+                    <td>
+                        {verNum}
+                    </td>
+                })}
+            </tr>
+        </table>
     );
 }
 

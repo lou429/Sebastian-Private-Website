@@ -79,7 +79,7 @@ function receivedTagCallback(data) {
     Object.entries(data).map((tag, index) => {
         if(index < 3)
             result.push(new GithubTag(tag))
-    })
+    });
     return result; 
 }
 
