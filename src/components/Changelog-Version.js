@@ -28,6 +28,9 @@ function ChangelogVersion(props) {
                     <th>
                         Version number
                     </th>
+                    <th>
+                        Update name
+                    </th>
                 </tr>
             </thead>
             <tbody>
