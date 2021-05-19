@@ -1,10 +1,26 @@
-import react from 'react';
+import react, {useState, useEffect} from 'react';
 import DirectionButton from './changelogButtons';
+import VersionPageCount from './VersionPageCount';
 import './Changelog-Version.scss'
 
 const tempArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function ChangelogVersion(props) {
+    const [versionList, setVersionList] = useState([]);
+    const [currentList, setCurrentList] = useState([]);
+    const [currentListIndex, setCurrentListIndex] = useState(0);
+    const pagesPerTable = 10;
+
+    useEffect(function updateVersionInfoArray() {
+        setCurrentList(versionList.splice(currentList - 1 * pagesPerTable, currentList * pagesPerTable))
+    }, [currentList, versionList]);
+
+    setVersionList(props.versionList);
+    
+    function directionClickCallback(t) {
+        setCurrentListIndex(currentListIndex + (t ? 1 : -1))
+    }
+
     return(
         <table className="changelog-version-wrapper">
             <thead>
@@ -17,7 +33,7 @@ function ChangelogVersion(props) {
             <tbody>
                 <tr>
                     {/* {props.data.forEach((verNum) => { */}
-                    {tempArr.forEach((verNum) => {
+                    {currentList.forEach((verNum) => {
                         <td>
                             {verNum}
                         </td>
@@ -25,14 +41,19 @@ function ChangelogVersion(props) {
                 </tr>
             </tbody>
             <tfoot>
-                <DirectionButton direction="Left"/>
-                <h6>
-                    1/1
-                </h6>
-                <DirectionButton direction="Right"/>
+                <DirectionButton direction="Left" onClick={directionClickCallback(true)}/>
+                <VersionPageCount />
+                <DirectionButton direction="Right" onClick={directionClickCallback(false)}/>
             </tfoot>
         </table>
     );
+}
+
+class PageCount {
+    constructor(array) {
+        this.currentPage = array[0];
+        this.count = array[1];
+    }
 }
 
 export default ChangelogVersion;
