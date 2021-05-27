@@ -6,7 +6,15 @@
     text-align: center;
     height: 100%;
     border: thick solid inherit;
+
+    .changelog-version-name-column {
+        width: auto; 
+    }
+    .changelog-version-number-column {
+        width: 40px
+    }
     
+
     thead {
         // padding-top: 5px;
         // padding-bottom: 5px;
@@ -21,6 +29,13 @@
         background-color: $version-number-background-body;
         color: $version-number-text-body;
         height: 80%;
+
+        th {
+            max-height: 20px;
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     tfoot {

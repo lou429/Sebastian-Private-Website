@@ -6,47 +6,113 @@ import './Changelog-Version.scss'
 const tempArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function ChangelogVersion(props) {
-    const [versionList, setVersionList] = useState([]);
-    const [currentList, setCurrentList] = useState([]);
-    const [currentListIndex, setCurrentListIndex] = useState(0);
-    const pagesPerTable = 10;
-
-    useEffect(function updateVersionInfoArray() {
-        setCurrentList(versionList.splice(currentList - 1 * pagesPerTable, currentList * pagesPerTable))
-    }, [currentList, versionList]);
-
-    setVersionList(props.versionList);
     
     function directionClickCallback(t) {
-        setCurrentListIndex(currentListIndex + (t ? 1 : -1))
+        // setCurrentListIndex(currentListIndex + (t ? 1 : -1))
     }
 
     return(
         <table className="changelog-version-wrapper">
             <thead>
                 <tr>
-                    <th>
-                        Version number
+                    <th className="changelog-version-name-column">
+                         Version name
                     </th>
-                    <th>
-                        Update name
+                    <th className="changelog-version-number-column">
+                        Version number 
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    {/* {props.data.forEach((verNum) => { */}
-                    {currentList.forEach((verNum) => {
-                        <td>
-                            {verNum}
-                        </td>
-                    })}
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        test version 
+                    </th>
+                    <th>
+                        1.00 
+                    </th>
                 </tr>
             </tbody>
             <tfoot>
+                <tr>
+                <th>
                 <DirectionButton direction="Left" onClick={directionClickCallback(true)}/>
+                </th>
+                </tr>
+                <tr>
+                <th>
                 <VersionPageCount />
+                </th>
+                </tr>
+                <tr>
+                    <th>
                 <DirectionButton direction="Right" onClick={directionClickCallback(false)}/>
+                    </th>
+                </tr>
             </tfoot>
         </table>
     );
