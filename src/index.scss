@@ -4,6 +4,10 @@ $background-color-secondary: #ffffff;
 $circle-primary: rgba(255,255,255,0.9);
 $circle-secondary: rgba(255,255,255,0.1);
 
+$content-wrapper-color-border: 3px solid rgba(255, 255, 255, 0.602);
+
+$content-heading-color: white;
+
 $navlink-primary-color: #658ec6;
 $navlink-hover-color: #00fdff;
 
@@ -15,7 +19,6 @@ $linear-gradient-fifth: #00fdff;
 $linear-gradient-sixth: #0032ff;
 $linear-gradient-seventh: #fd00ff;
 $linear-gradient-eighth: #ff0000;
-
 
 
 $content-outline-background: 2px solid orange; 
@@ -30,6 +33,13 @@ $card-color-secondary: #303030;
 $card-border: 2px solid #000000;
 
 $primary-text-color: black; 
+
+$version-number-background-head: rgb(223, 223, 223);
+$version-number-text-head: rgb(0, 0, 0);
+$version-number-background-body: rgb(223, 223, 223);
+$version-number-text-body: black;
+$version-number-background-foot: rgb(223, 223, 223);
+$version-number-text-foot: black;
 
 $border: 4px;
 

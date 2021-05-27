@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="page-wrapper">
             {/* Randomly drawn circles */}
-            < Circle/>
+            {/* < Circle/>  */} 
 
             <div className="glass-page-wrapper">
                 {/* All navbar content */}

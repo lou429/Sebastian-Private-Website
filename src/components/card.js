@@ -76,10 +76,11 @@ function Card(props) {
 
 function receivedTagCallback(data) {
     let result = []
+    // eslint-disable-next-line array-callback-return
     Object.entries(data).map((tag, index) => {
         if(index < 3)
             result.push(new GithubTag(tag))
-    })
+    });
     return result; 
 }
 

@@ -1,0 +1,49 @@
+@import "src/index";
+
+.page-container {
+    height: 100%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    color: white; 
+    div {
+        display: inline-block;
+        position: relative;
+        display: flex;
+        bottom: 0px;
+        // padding: 20px;
+        h6 {
+            font-size: 36px;
+        }
+    }
+}
+
+.content-body {
+    height: 90%;
+}
+
+.changelog-content-wrapper {
+    display: flex-box;
+    height: 100%;
+    div {
+        border: 1px solid white;
+        float: left; 
+        // padding: 10px;
+        height: 100%;
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+}
+
+.change-log-ver-col {
+    width: 30%;
+    font-size: large;
+}
+
+.change-log-info-col {
+    width: 70%;
+    font-size: medium;
+}
