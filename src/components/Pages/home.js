@@ -1,8 +1,15 @@
 import React from 'react';
-import ContentWrapper from './contentwrapper.js';
+import ContentWrapper from '../Content/ContentWrapper.js';
 import './home.scss';
+import {ModalHandler} from '../ModalHandler.js';
+
+var modalHandler = new ModalHandler();
 
 function Home() {
+    function HideModal() {
+        modalHandler.Toggle();
+    }
+
     return (
         <ContentWrapper heading="Home page">
             <h6>
@@ -16,6 +23,9 @@ function Home() {
             <h6>
                 If you encounter any bugs please send a message on the contact page alongside with what you were doing that caused 
             </h6>
+            <button onClick={HideModal}>
+                Click me 
+            </button>
         </ContentWrapper>
     );
 }

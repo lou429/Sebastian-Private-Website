@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import './navbarfooter.scss';
+import './Navbarfooter.scss';
 import 'animate.css';
 import $ from 'jquery';
-import Tooltip from './tooltip'
+import Tooltip from '../General/Tooltip'
 
 let loadObject = (objName) => JSON.parse(localStorage.getItem(objName));
 let saveObject = (objName, object) => localStorage.setItem(objName, JSON.stringify(object));

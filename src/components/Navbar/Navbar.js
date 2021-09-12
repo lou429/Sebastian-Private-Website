@@ -1,7 +1,7 @@
-import NavbarLinks from './navbarlink.js';
-import NavbarHeading from './navbarHeading.js';
-import NavbarFooter from './navbarfooter.js';
-import './navbar.scss';
+import NavbarLinks from './Navbarlink.js';
+import NavbarHeading from './NavbarHeading.js';
+import NavbarFooter from './Navbarfooter.js';
+import './Navbar.scss';
 
 function NavBar() {
     return (
