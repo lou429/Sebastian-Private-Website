@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {Octokit} from "@octokit/rest";
-import Card from './card';
-import ContentWrapper from './contentwrapper.js';
+import Card from '../General/Card';
+import ContentWrapper from '../Content/ContentWrapper.js';
 import './dev.scss';
 
 class GithubRepos {

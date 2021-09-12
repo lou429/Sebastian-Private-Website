@@ -1,5 +1,5 @@
 import React from 'react'; 
-import ContentWrapper from './contentwrapper';
+import ContentWrapper from '../Content/ContentWrapper';
 
 function NoPage() {
     return(

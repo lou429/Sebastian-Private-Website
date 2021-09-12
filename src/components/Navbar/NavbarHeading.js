@@ -1,5 +1,5 @@
 import React from 'react-router-dom';
-import './navbarHeading.scss';
+import './NavbarHeading.scss';
 
 function NavbarHeading() {
     return(

@@ -1,5 +1,5 @@
 import React from 'react';
-import './navbarlinks.scss';
+import './Navbarlinks.scss';
 
 function NavLink(props) {
     let objName = props.href === window.location.pathname ? 'nav-link-active' : 'nav-link';

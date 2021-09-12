@@ -3,7 +3,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useEffect} from 'react';
-import './card.scss';
+import './Card.scss';
 import {Octokit} from "@octokit/rest";
 import $ from 'jquery';
 import CardTags from './CardTags.js';
